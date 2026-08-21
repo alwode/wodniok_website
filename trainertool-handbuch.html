@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Offizielles Benutzerhandbuch für das Floorball Trainertool: Trainingsplanung, Übungsdatenbank, Taktikskizzen, PDF-Export und E-Mail-Versand.">
+  <title>Benutzerhandbuch – Floorball Trainertool | Alex Wodniok</title>
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="site-logo">
+        <div class="logo-icon">AW</div>
+        <span>Alex Wodniok</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="floorball-clock.html">Floorball Clock</a></li>
+        <li><a href="trainertool.html">Trainertool</a></li>
+        <li><a href="trainertool-handbuch.html" class="active">Trainertool Handbuch</a></li>
+        <li><a href="cookvegan.html">CookVegan 🌱</a></li>
+        <li><a href="apps.html">Alle Apps</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="trainertool.html" class="btn btn-red btn-sm">Zur App</a>
+        <button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title Banner -->
+  <section class="section" style="padding: 3.5rem 0 2rem; border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="badge badge-red">Dokumentation & Praxis-Leitfaden</div>
+      <h1>Floorball Trainertool <span class="text-gradient-red">Benutzerhandbuch</span></h1>
+      <p style="font-size: 1.15rem; max-width: 800px;">
+        Vollständige Anleitung für Floorball-Trainer und Übungsleiter. Erfahren Sie, wie Sie Übungen kategorisieren, eigene Taktikskizzen erfassen, Trainingseinheiten zeitlich strukturieren und druckfertige PDF-Trainingspläne per E-Mail versenden.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Manual Layout -->
+  <section class="section" style="padding-top: 3rem;">
+    <div class="container manual-layout">
+      
+      <!-- Sticky Sidebar Table of Contents -->
+      <aside class="manual-sidebar">
+        <h4>Inhaltsverzeichnis</h4>
+        <ul class="manual-nav">
+          <li><a href="#uebersicht" class="active-red">1. Übersicht & Konzept</a></li>
+          <li><a href="#uebungen">2. Die Übungssammlung</a></li>
+          <li><a href="#erstellen">3. Übungen erfassen & Skizzen</a></li>
+          <li><a href="#trainings">4. Trainings planen (Meine Trainings)</a></li>
+          <li><a href="#favoriten">5. Favoritenverwaltung</a></li>
+          <li><a href="#pdf">6. PDF-Export & E-Mail-Versand</a></li>
+          <li><a href="#cloud">7. Cloud-Sync & Trainer-Profile</a></li>
+          <li><a href="#faq">8. FAQ & Praxistipps</a></li>
+        </ul>
+      </aside>
+
+      <!-- Content Area -->
+      <main class="manual-content">
+
+        <!-- 1. Übersicht -->
+        <article class="manual-section" id="uebersicht">
+          <h2>1. Übersicht & Konzept</h2>
+          <div class="manual-card">
+            <p>
+              Das <strong>Floorball Trainertool</strong> wurde entwickelt, um Trainern und Betreuern von Floorball- und Unihockeymannschaften eine intuitive, zeitsparende Lösung für die Trainingsgestaltung an die Hand zu geben.
+            </p>
+            <p>
+              Statt Übungszettel manuell abzuheften oder im Chatverlauf zu suchen, bündelt die App alle Übungen, Zeichnungen und Trainingspläne in einer zentralen Cloud-Datenbank.
+            </p>
+
+            <div class="callout callout-red">
+              <h5>📋 Drei zentrale Funktionsbereiche</h5>
+              <p>Über die Haupt-Tabs am unteren Bildschirmrand wechseln Sie nahtlos zwischen <strong>Meine Trainings</strong>, <strong>Alle Übungen</strong> und <strong>Meine Favoriten</strong>.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Die Übungssammlung -->
+        <article class="manual-section" id="uebungen">
+          <h2>2. Die Übungssammlung (Kategorien & Suche)</h2>
+          <div class="manual-card">
+            <p>
+              Im Tab <strong>„Alle Übungen“</strong> steht Ihnen die gesamte Übungsdatenbank zur Verfügung:
+            </p>
+
+            <div class="step-block">
+              <div class="step-number red">🗂</div>
+              <div class="step-details">
+                <h4>Kategorie-Einteilung</h4>
+                <p>Übungen sind sauber nach Floorball-Schwerpunkten gegliedert:
+                  <ul style="margin-top: 0.5rem; line-height: 1.6;">
+                    <li>🏃 <strong>Aufwärmen & Laufschule (Warm-Up)</strong></li>
+                    <li>🏑 <strong>Passspiel & Stocktechnik (Passing)</strong></li>
+                    <li>🎯 <strong>Torschuss & Abschlussformen (Shooting)</strong></li>
+                    <li>⚔️ <strong>Zweikampf & 1-gegen-1 / 2-gegen-2 (Duels)</strong></li>
+                    <li>🛡 <strong>Taktik, Pressing & Überzahl/Unterzahl (Tactics)</strong></li>
+                    <li>🧤 <strong>Torhütertraining (Goalie)</strong></li>
+                    <li>🏆 <strong>Abschluss- und Spielformen (Game forms)</strong></li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number red">🔍</div>
+              <div class="step-details">
+                <h4>Echtzeit-Suche</h4>
+                <p>Über die Lupe in der Titelleiste können Sie über den <em>ExerciseSearchDelegate</em> per Stichwort sofort nach bestimmten Übungsnamen oder Inhalten filtern.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Übungen erfassen & Skizzen -->
+        <article class="manual-section" id="erstellen">
+          <h2>3. Eigene Übungen erfassen & Skizzen einbinden</h2>
+          <div class="manual-card">
+            <p>
+              Fügen Sie neue Übungen im Handumdrehen zur Vereins- oder persönlichen Datenbank hinzu:
+            </p>
+            <ol style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+              <li>Tippen Sie im Tab <em>Alle Übungen</em> auf das <strong>+ Symbol</strong> in der oberen Leiste.</li>
+              <li>Geben Sie den <strong>Namen der Übung</strong> (z. B. <em>„Doppelpass mit Torabschluss im Slot“</em>) ein.</li>
+              <li>Verfassen Sie die <strong>Ablaufbeschreibung</strong> inkl. Spieleranzahl, benötigtem Material (Bälle, Hütchen, Pylonen) und Coaching-Schwerpunkten.</li>
+              <li>Wählen Sie über <strong>„Bild wählen“</strong> eine Taktikskizze, ein Foto oder ein Diagramm aus Ihrer Galerie aus.</li>
+              <li>Weisen Sie die passende <strong>Kategorie</strong> zu und tippen Sie auf das <strong>Speichern-Symbol</strong>.</li>
+            </ol>
+
+            <div class="callout callout-info">
+              <h5>🖼️ Vollbild-Bildbetrachter</h5>
+              <p>Tippen Sie in einer Übung auf die Grafik, um sie im <em>ExercisePictureViewer</em> mit Zoom-Funktion vergrößert anzuzeigen.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Trainings planen -->
+        <article class="manual-section" id="trainings">
+          <h2>4. Trainings planen & zusammenstellen (Meine Trainings)</h2>
+          <div class="manual-card">
+            <p>
+              Erstellen Sie maßgeschneiderte Trainingseinheiten für Ihre Mannschaften:
+            </p>
+
+            <div class="step-block">
+              <div class="step-number red">1</div>
+              <div class="step-details">
+                <h4>Neues Training anlegen</h4>
+                <p>Tippen Sie im Tab <em>Meine Trainings</em> auf das <strong>+ Symbol</strong>. Ein Auswahldialog öffnet sich, um Übungen aus dem Katalog hinzuzufügen.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number red">2</div>
+              <div class="step-details">
+                <h4>Übungen auswählen & Reihenfolge festlegen</h4>
+                <p>Wählen Sie die gewünschten Übungen für die Einheit aus (z. B. 1x Aufwärmen, 2x Passübung, 1x Torschuss, 1x Spielform) und ordnen Sie diese chronologisch an.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number red">3</div>
+              <div class="step-details">
+                <h4>Trainingsübersicht</h4>
+                <p>Die fertige Einheit wird in Ihrer Liste mit allen Übungsdetails und Zeitblöcken gespeichert.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Favoritenverwaltung -->
+        <article class="manual-section" id="favoriten">
+          <h2>5. Favoritenverwaltung</h2>
+          <div class="manual-card">
+            <p>
+              Bewährte Standardübungen, die Sie regelmäßig einsetzen, können Sie mit einem Klick auf das <strong>Herz-Symbol</strong> favorisieren.
+            </p>
+            <p>
+              Im Tab <strong>„Meine Favoriten“</strong> haben Sie Ihre persönlichen Top-Übungen jederzeit griffbereit, ohne lange im Gesamtkatalog suchen zu müssen.
+            </p>
+          </div>
+        </article>
+
+        <!-- 6. PDF-Export & E-Mail-Versand -->
+        <article class="manual-section" id="pdf">
+          <h2>6. PDF-Trainingsplan generieren & per E-Mail teilen</h2>
+          <div class="manual-card">
+            <p>
+              Verwandeln Sie Ihre geplante Einheit in ein professionelles Dokument:
+            </p>
+
+            <div class="step-block">
+              <div class="step-number red">📄</div>
+              <div class="step-details">
+                <h4>Druckfertiges PDF erstellen</h4>
+                <p>Tippen Sie in der Trainingsansicht auf <strong>PDF anzeigen</strong>. Die App generiert ein übersichtliches Dokument mit Trainingsname, Datum, allen Übungen, Beschreibungen und Grafiken.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number red">✉️</div>
+              <div class="step-details">
+                <h4>Direkter E-Mail-Versand</h4>
+                <p>Über das <strong>E-Mail-Symbol</strong> im PDF-Viewer können Sie den Trainingsplan als PDF-Anhang mit formatierter HTML-Nachricht direkt an Ihr Trainerteam oder Vertretungen versenden.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Cloud-Sync -->
+        <article class="manual-section" id="cloud">
+          <h2>7. Cloud-Synchronisation & Trainer-Profile</h2>
+          <div class="manual-card">
+            <p>
+              Dank der Anbindung an <strong>Firebase (Auth & Cloud Firestore)</strong> werden Ihre Übungen und Trainingspläne sicher in der Cloud gespeichert und automatisch zwischen Ihren Geräten (Smartphone, Tablet, Desktop) synchronisiert.
+            </p>
+            <p>
+              Beim Anlegen von Übungen wird der Autor (Vorname, Nachname, Initialen) hinterlegt, sodass innerhalb eines Trainerteams stets klar ist, wer welche Übung beigesteuert hat.
+            </p>
+          </div>
+        </article>
+
+        <!-- 8. FAQ -->
+        <article class="manual-section" id="faq">
+          <h2>8. Häufige Fragen & Praxistipps</h2>
+          <div class="manual-card">
+            <h4>Kann ich Trainingspläne auch ausdrucken?</h4>
+            <p>Ja! Über die systemeigene Druckfunktion im PDF-Viewer können Sie den Trainingsplan direkt an einen WLAN-Drucker senden.</p>
+
+            <h4 style="margin-top: 1.5rem;">Welche Bildformate werden für Übungsgrafiken unterstützt?</h4>
+            <p>Es werden gängige Grafikformate wie PNG und JPEG unterstützt. Grafiken werden automatisch für eine flüssige Anzeige optimiert.</p>
+          </div>
+        </article>
+
+      </main>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <div class="logo-icon">AW</div>
+            <span>Alex Wodniok</span>
+          </a>
+          <p>Floorball Trainertool, Floorball Clock & CookVegan – Innovative Apps von Alexander Wodniok.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trainertool</h4>
+          <ul class="footer-links">
+            <li><a href="trainertool.html">App Details</a></li>
+            <li><a href="trainertool-handbuch.html">Benutzerhandbuch</a></li>
+            <li><a href="trainertool-handbuch.html#uebungen">Übungskatalog</a></li>
+            <li><a href="trainertool-handbuch.html#pdf">PDF-Export</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Floorball Clock</h4>
+          <ul class="footer-links">
+            <li><a href="floorball-clock.html">App Details</a></li>
+            <li><a href="handbuch.html">Handbuch (IFF 2022)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CookVegan 🌱</h4>
+          <ul class="footer-links">
+            <li><a href="cookvegan.html">App Details</a></li>
+            <li><a href="cookvegan-handbuch.html">Handbuch</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="apps.html">Alle Apps</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Alexander Wodniok. Alle Rechte vorbehalten.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

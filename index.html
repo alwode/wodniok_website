@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Offizielle Website von Alexander Wodniok – Entwickler von Floorball Clock, Floorball Trainertool, CookVegan und mobilen Apps.">
+  <title>Alexander Wodniok | Software & Mobile Apps – Floorball & Lifestyle</title>
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="site-logo">
+        <div class="logo-icon">AW</div>
+        <span>Alex Wodniok</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="floorball-clock.html">Floorball Clock</a></li>
+        <li><a href="trainertool.html">Trainertool</a></li>
+        <li><a href="cookvegan.html">CookVegan 🌱</a></li>
+        <li><a href="apps.html">Alle Apps</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="floorball-clock.html" class="btn btn-primary btn-sm">Floorball Clock</a>
+        <a href="trainertool.html" class="btn btn-red btn-sm">Trainertool</a>
+        <button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge badge-orange">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          Floorball Suite & Lifestyle Apps
+        </div>
+        <h1>Moderne <span class="text-gradient">Mobile Apps</span> & Softwarelösungen</h1>
+        <p class="hero-subtitle">
+          Willkommen auf der offiziellen Entwicklerseite von <strong>Alexander Wodniok</strong>. Entdecken Sie spezialisierte Anwendungen für den Sport- und Alltagsbereich – vom professionellen <strong>Floorball Spielsekretariat</strong> und <strong>Trainertool</strong> bis zum intelligenten <strong>CookVegan Koch-Assistenten</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="floorball-clock.html" class="btn btn-primary btn-lg">Floorball Clock</a>
+          <a href="trainertool.html" class="btn btn-red btn-lg">Trainertool</a>
+          <a href="cookvegan.html" class="btn btn-green btn-lg">CookVegan 🌱</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h4>Floorball Clock</h4>
+            <p>FVD/IFF 2022 Spielsekretariat</p>
+          </div>
+          <div class="stat-item">
+            <h4>Trainertool</h4>
+            <p>Übungen, Taktik & PDF-Planung</p>
+          </div>
+          <div class="stat-item">
+            <h4>CookVegan 🌱</h4>
+            <p>Smarter veganer Rezept-Tresor</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Scoreboard Card -->
+      <div class="hero-visual">
+        <div class="scoreboard-preview">
+          <div class="sb-header">
+            <span class="sb-period">3. Drittel (5 gegen 4)</span>
+            <div class="sb-status">
+              <span class="sb-status-dot"></span>
+              <span>LIVE SCOREBOARD DEMO</span>
+            </div>
+          </div>
+
+          <div class="sb-timer-container">
+            <div class="sb-time" id="demo-timer">18:45</div>
+          </div>
+
+          <div class="sb-teams">
+            <div class="sb-team">
+              <div class="sb-team-name">Heim (UHC Tigers)</div>
+              <div class="sb-score" id="home-score">4</div>
+            </div>
+            <div class="sb-vs">:</div>
+            <div class="sb-team">
+              <div class="sb-team-name">Gast (Floorball Stars)</div>
+              <div class="sb-score" id="guest-score">3</div>
+            </div>
+          </div>
+
+          <div class="sb-penalties">
+            <div class="penalty-box">
+              <span>#7 Tigers</span>
+              <span>01:14 (2')</span>
+            </div>
+            <div class="penalty-box">
+              <span>#23 Stars</span>
+              <span>01:48 (2'+2' 1/2)</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem; justify-content: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; flex-wrap: wrap;">
+            <button id="btn-toggle-timer" class="btn btn-primary btn-sm">Start / Pause</button>
+            <button id="btn-home-plus" class="btn btn-secondary btn-sm">+ Tor Heim</button>
+            <button id="btn-guest-plus" class="btn btn-secondary btn-sm">+ Tor Gast</button>
+            <button id="btn-reset-demo" class="btn btn-secondary btn-sm">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Apps Grid -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">App Highlights</div>
+        <h2>Spezialisierte Lösungen für Sport & Alltag</h2>
+        <p>Jede Anwendung ist mit viel Liebe zum Detail für reibungslose Bedienung und maximale Zuverlässigkeit entwickelt.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- App Card 1: Floorball Clock -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <span class="badge">Spielsekretariat & Zeitnahme</span>
+          <h3>Floorball Clock</h3>
+          <p>
+            Vollautomatisches Spielsekretariat nach FVD/IFF 2022: Zehntelsekunden im Schlussspurt, 2' / 2'+2' / 10' Strafen-Engine, Roster-Verwaltung, Beamer-Scoreboard und PDF-Spielbericht.
+          </p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="floorball-clock.html" class="btn btn-primary btn-sm">Details & Features →</a>
+            <a href="handbuch.html" class="btn btn-secondary btn-sm">📖 Handbuch</a>
+          </div>
+        </div>
+
+        <!-- App Card 2: Trainertool -->
+        <div class="feature-card red-hover">
+          <div class="feature-icon red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </div>
+          <span class="badge badge-red">Trainingsplanung & Taktik</span>
+          <h3>Floorball Trainertool</h3>
+          <p>
+            Die smarte App für Trainer: Strukturierte Übungssammlung nach Kategorien, eigene Übungen mit Taktikskizzen, Trainingsplan-Zusammenstellung, druckfertiger PDF-Export und E-Mail-Versand.
+          </p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="trainertool.html" class="btn btn-red btn-sm">Details & Features →</a>
+            <a href="trainertool-handbuch.html" class="btn btn-secondary btn-sm">📖 Handbuch</a>
+          </div>
+        </div>
+
+        <!-- App Card 3: CookVegan -->
+        <div class="feature-card green-hover">
+          <div class="feature-icon green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <span class="badge badge-green">Rezept-Tresor & Kochen</span>
+          <h3>CookVegan 🌱</h3>
+          <p>
+            Smarte vegane Rezeptverwaltung: 3-Stufen Cloud-Tresor (Privat 🔒, Geteilt 👥, Community 🌍), Web-Rezept-Importer (JSON-LD), Portionen-Skalierer mit Bruchzahlen (½ TL), B12-Nährwerte und Hands-Free Koch-Modus.
+          </p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="cookvegan.html" class="btn btn-green btn-sm">Details & Features →</a>
+            <a href="cookvegan-handbuch.html" class="btn btn-secondary btn-sm">📖 Handbuch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über Alexander Wodniok Section -->
+  <section class="section">
+    <div class="container">
+      <div class="profile-card">
+        <div class="profile-avatar">AW</div>
+        <div class="profile-info">
+          <div class="badge">Über den Entwickler</div>
+          <h2>Alexander Wodniok</h2>
+          <p>
+            Software- und App-Entwickler aus Landsberg am Lech mit Leidenschaft für intuitive Benutzeroberflächen, performante Cross-Plattform-Entwicklung (Flutter) und praxisnahe Softwarearchitektur im Sport- und Alltagsbereich.
+          </p>
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+            <a href="kontakt.html" class="btn btn-secondary btn-sm">Kontakt aufnehmen</a>
+            <a href="apps.html" class="btn btn-secondary btn-sm">Alle Apps & Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <div class="logo-icon">AW</div>
+            <span>Alex Wodniok</span>
+          </a>
+          <p>Moderne Software- und App-Entwicklung von Alexander Wodniok.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Floorball Clock</h4>
+          <ul class="footer-links">
+            <li><a href="floorball-clock.html">App Übersicht</a></li>
+            <li><a href="handbuch.html">Benutzerhandbuch</a></li>
+            <li><a href="handbuch.html#strafen-arten">Strafarten (IFF 2022)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trainertool</h4>
+          <ul class="footer-links">
+            <li><a href="trainertool.html">App Übersicht</a></li>
+            <li><a href="trainertool-handbuch.html">Benutzerhandbuch</a></li>
+            <li><a href="trainertool-handbuch.html#pdf">PDF-Export</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CookVegan 🌱</h4>
+          <ul class="footer-links">
+            <li><a href="cookvegan.html">App Übersicht</a></li>
+            <li><a href="cookvegan-handbuch.html">Benutzerhandbuch</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="apps.html">Alle Apps</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Alexander Wodniok. Alle Rechte vorbehalten.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

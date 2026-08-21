@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Offizielles Benutzerhandbuch für CookVegan 🌱: 3-Stufen Cloud-Sicherheit, Web-Rezept-Import, Portionen-Skalierer, Koch-Modus mit Timern und Einkaufsliste.">
+  <title>Benutzerhandbuch – CookVegan 🌱 | Alex Wodniok</title>
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="site-logo">
+        <div class="logo-icon">AW</div>
+        <span>Alex Wodniok</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="floorball-clock.html">Floorball Clock</a></li>
+        <li><a href="trainertool.html">Trainertool</a></li>
+        <li><a href="cookvegan.html">CookVegan 🌱</a></li>
+        <li><a href="cookvegan-handbuch.html" class="active">CookVegan Handbuch</a></li>
+        <li><a href="apps.html">Alle Apps</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="cookvegan.html" class="btn btn-green btn-sm">Zur App</a>
+        <button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title Banner -->
+  <section class="section" style="padding: 3.5rem 0 2rem; border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="badge badge-green">Offizielle Dokumentation (CookVegan PRD)</div>
+      <h1>CookVegan 🌱 <span class="text-gradient-green">Benutzerhandbuch</span></h1>
+      <p style="font-size: 1.15rem; max-width: 800px;">
+        Vollständige Anleitung für die pflanzliche Rezeptverwaltung. Erfahren Sie alles über das 3-Stufen-Cloud-Modell, den Web-Rezept-Import, die dynamische Portionenskalierung mit Bruchzahlen, den ablenkungsfreien Koch-Modus und die smarte Einkaufsliste.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Manual Layout -->
+  <section class="section" style="padding-top: 3rem;">
+    <div class="container manual-layout">
+      
+      <!-- Sticky Sidebar Table of Contents -->
+      <aside class="manual-sidebar">
+        <h4>Inhaltsverzeichnis</h4>
+        <ul class="manual-nav">
+          <li><a href="#uebersicht" class="active-green">1. Übersicht & Vision</a></li>
+          <li><a href="#cloud">2. 3-Stufen Cloud-Sicherheit</a></li>
+          <li><a href="#rezepte">3. Rezepte & Nährwertanalyse</a></li>
+          <li><a href="#skalierung">4. Portionen & Bruchzahlen</a></li>
+          <li><a href="#importer">5. Web-Rezept-Importer</a></li>
+          <li><a href="#kochmodus">6. Koch-Modus mit Küchentimern</a></li>
+          <li><a href="#einkauf">7. Smarte Einkaufsliste</a></li>
+          <li><a href="#sprachen">8. Mehrsprachigkeit (DE/EN)</a></li>
+          <li><a href="#faq">9. Häufige Fragen & FAQ</a></li>
+        </ul>
+      </aside>
+
+      <!-- Content Area -->
+      <main class="manual-content">
+
+        <!-- 1. Übersicht & Vision -->
+        <article class="manual-section" id="uebersicht">
+          <h2>1. Übersicht & Vision</h2>
+          <div class="manual-card">
+            <p>
+              <strong>CookVegan</strong> (<code>de.wodniok.cookvegan</code>) ist eine moderne, adaptive Cross-Plattform-Applikation (iOS, iPadOS, Android, macOS Desktop und Web), die speziell für das Entdecken, Strukturieren, Teilen und Kochen veganer Rezepte entwickelt wurde.
+            </p>
+            <p>
+              Die App zeichnet sich durch ein ansprechendes <strong>Botanical Sage Design</strong>, kompromisslose Ausfallsicherheit durch Cloud-Synchronisation (Firebase Firestore & Auth) und praktische Küchenwerkzeuge aus.
+            </p>
+
+            <div class="callout callout-tip">
+              <h5>🌱 Optimiert für jedes Endgerät</h5>
+              <p>Egal ob auf dem iPhone in der Hosentasche, im iPad Split-View auf der Küchentheke oder auf dem Mac-Desktop beim Wochenplan: Das adaptive Interface passt sich optimal an die Bildschirmgröße an.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. 3-Stufen Cloud-Sicherheit -->
+        <article class="manual-section" id="cloud">
+          <h2>2. Das 3-Stufen Cloud- & Sharing-Modell</h2>
+          <div class="manual-card">
+            <p>
+              In CookVegan haben Sie jederzeit die volle Kontrolle darüber, wer Ihre Rezepte einsehen darf:
+            </p>
+
+            <div class="step-block">
+              <div class="step-number green">🔒</div>
+              <div class="step-details">
+                <h4>Privat (Private Vault)</h4>
+                <p>Das Rezept ist in Ihrem persönlichen Cloud-Tresor gespeichert. Ausschließlich Sie als authentifizierter Autor können das Rezept sehen, durchsuchen, bearbeiten oder löschen.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number green">👥</div>
+              <div class="step-details">
+                <h4>Geteilt (Shared with Me)</h4>
+                <p>Teilen Sie Rezepte gezielt mit Freunden, Partnern oder Familienmitgliedern über deren <strong>E-Mail-Adresse oder User-ID</strong>. Eingeladene Personen können das Rezept live einsehen, mitkochen und in ihre Einkaufsliste übernehmen.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number green">🌍</div>
+              <div class="step-details">
+                <h4>Öffentlich (Community Public)</h4>
+                <p>Veröffentlichen Sie Ihre besten Kreationen für die gesamte CookVegan-Community. Alle Nutzer können das Rezept im öffentlichen Feed entdecken und nachkochen.</p>
+              </div>
+            </div>
+
+            <div class="callout callout-info">
+              <h5>🛡️ Autorenschutz durch Sicherheitsregeln</h5>
+              <p>Die Cloud-Sicherheitsregeln (<code>firestore.rules</code>) stellen sicher, dass nur der ursprüngliche Autor Änderungen oder Löschungen an einem Rezept vornehmen kann.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Rezepte & Nährwerte -->
+        <article class="manual-section" id="rezepte">
+          <h2>3. Rezeptverwaltung & Vegane Nährwertanalyse</h2>
+          <div class="manual-card">
+            <p>
+              Jedes Rezept in CookVegan bietet eine umfassende Datenstruktur:
+            </p>
+            <ul style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+              <li><strong>Metadaten:</strong> Titel, Beschreibung, ansprechendes Titelbild, Vorbereitungszeit, Kochzeit, Gesamtdauer, Schwierigkeitsgrad (Leicht, Mittel, Schwer).</li>
+              <li><strong>Kategorien & Tags:</strong> High-Protein, Glutenfrei, Schnelle Küche (Quick & Easy), Meal-Prep, Comfort Food.</li>
+              <li><strong>Allergene & Hinweise:</strong> Nüsse, Soja, Gluten, Sesam, Lupine etc.</li>
+              <li><strong>Vollständige Nährwert-Aufschlüsselung pro Portion:</strong>
+                <ul style="margin-top: 0.5rem;">
+                  <li>Kalorien (kcal), Protein (g), Kohlenhydrate (g), Fett (g), Ballaststoffe (g)</li>
+                  <li><strong>Vegane Mikronährstoffe:</strong> Vitamin B12 (µg), Eisen (mg), Calcium (mg)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 4. Portionen & Bruchzahlen -->
+        <article class="manual-section" id="skalierung">
+          <h2>4. Dynamischer Portionen- & Bruchzahlen-Skalierer</h2>
+          <div class="manual-card">
+            <p>
+              Passen Sie die Portionsanzahl mit den <strong>+ / - Buttons</strong> flexibel an – CookVegan rechnet alle Mengenangaben und Nährwerte in Echtzeit um:
+            </p>
+
+            <div class="step-block">
+              <div class="step-number green">½</div>
+              <div class="step-details">
+                <h4>Echte Küchen-Bruchzahlen</h4>
+                <p>Statt unhandlicher Dezimalzahlen (wie <code>0.33</code> oder <code>1.25</code>) formatiert CookVegan Mengenangaben sauber als gebräuchliche Küchenbrüche wie <strong>⅓ TL</strong>, <strong>½ EL</strong> oder <strong>1 ¼ Tassen</strong>.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number green">⚖️</div>
+              <div class="step-details">
+                <h4>Metrische Einheiten & Nährwert-Skalierung</h4>
+                <p>Gramm-, Milliliter- und Stückangaben sowie die Makronährstoffsummen passen sich exakt an die gewünschte Gäste- oder Familienanzahl an.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Web-Rezept-Importer -->
+        <article class="manual-section" id="importer">
+          <h2>5. Smarter Web-Rezept-Importer</h2>
+          <div class="manual-card">
+            <p>
+              Übernehmen Sie Lieblingsrezepte aus dem Internet ohne manuelles Abtippen:
+            </p>
+
+            <div class="step-block">
+              <div class="step-number green">1</div>
+              <div class="step-details">
+                <h4>Rezept-URL kopieren & einfügen</h4>
+                <p>Kopieren Sie den Link eines beliebigen Foodblogs oder einer Rezeptseite und fügen Sie ihn in den Importer-Tab ein.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number green">2</div>
+              <div class="step-details">
+                <h4>Automatisches JSON-LD Parsing</h4>
+                <p>CookVegan analysiert den Quelltext über standardisierte <code>schema.org/Recipe</code> Metadaten und extrahiert Titel, Zutatenliste, Zubereitungsschritte und Bild automatisch.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number green">3</div>
+              <div class="step-details">
+                <h4>Live-Vorschau & Speichern</h4>
+                <p>Prüfen Sie das importierte Rezept in der Live-Vorschau, passen Sie bei Bedarf Details an und speichern Sie es direkt in Ihrem privaten Tresor.</p>
+              </div>
+            </div>
+
+            <div class="callout callout-tip">
+              <h5>📝 Manueller Text-Parser</h5>
+              <p>Haben Sie ein Rezept als reinen Text oder E-Mail vorliegen? Über den Reiter <strong>Text-Import</strong> können Sie den Text einfügen – CookVegan teilt ihn automatisch in Zutaten und Schritte auf.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Koch-Modus -->
+        <article class="manual-section" id="kochmodus">
+          <h2>6. Hands-Free Koch-Modus (Cook Mode)</h2>
+          <div class="manual-card">
+            <p>
+              Für die bequeme Zubereitung direkt an der Küchentheke:
+            </p>
+
+            <div class="step-block">
+              <div class="step-number green">📱</div>
+              <div class="step-details">
+                <h4>Große, ablenkungsfreie Schrittansicht</h4>
+                <p>Keine störenden Menüs oder Werbebanner – der Koch-Modus konzentriert sich ganz auf den aktuellen Zubereitungsschritt und den Fortschrittsbalken.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number green">⏱️</div>
+              <div class="step-details">
+                <h4>Integrierte Küchentimer mit Signalton</h4>
+                <p>Erkennt der Schritt eine Zeitangabe (z. B. <em>„15 Minuten köcheln lassen“</em>), wird direkt ein Countdown-Timer bereitgestellt. Mit Start, Pause, Reset und einer <strong>+1 Min</strong> Taste für schnelles Nachjustieren.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Smarte Einkaufsliste -->
+        <article class="manual-section" id="einkauf">
+          <h2>7. Smarte Einkaufsliste & Supermarkt-Gänge</h2>
+          <div class="manual-card">
+            <p>
+              Organisieren Sie Ihren Einkauf stressfrei:
+            </p>
+            <ol style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+              <li>Tippen Sie in einem Rezept auf <strong>„Zur Einkaufsliste hinzufügen“</strong>.</li>
+              <li>Wählen Sie die gewünschte Portionsgröße aus.</li>
+              <li>CookVegan sortiert alle Zutaten automatisch nach typischen <strong>Supermarkt-Gängen</strong>:
+                <ul style="margin-top: 0.5rem;">
+                  <li>🥦 <strong>Obst & Gemüse (Produce)</strong></li>
+                  <li>🧊 <strong>Kühlregal, Tofu & Pflanzendrinks (Refrigerated)</strong></li>
+                  <li>🌾 <strong>Getreide, Nudeln & Hülsenfrüchte (Grains & Legumes)</strong></li>
+                  <li>🥫 <strong>Vorratskammer & Saucen (Pantry)</strong></li>
+                  <li>🧂 <strong>Gewürze & Kräuter (Spices)</strong></li>
+                </ul>
+              </li>
+              <li>Beim Einkaufen haken Sie erledigte Artikel per Fingertipp ab. Ein Klick auf <em>„Erledigte löschen“</em> räumt die Liste auf.</li>
+            </ol>
+          </div>
+        </article>
+
+        <!-- 8. Mehrsprachigkeit -->
+        <article class="manual-section" id="sprachen">
+          <h2>8. Internationalisierung (DE / EN)</h2>
+          <div class="manual-card">
+            <p>
+              CookVegan ist vollständig zweisprachig lokalisiert:
+            </p>
+            <ul style="padding-left: 1.5rem; line-height: 1.8;">
+              <li><strong>Deutsch (`de-DE`)</strong> und <strong>Englisch (`en-US`)</strong>.</li>
+              <li>Umschaltung direkt in den App-Einstellungen oder über das Sprachauswahl-Menü.</li>
+              <li>Die gewählte Spracheinstellung wird dauerhaft gespeichert und synchronisiert.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 9. FAQ -->
+        <article class="manual-section" id="faq">
+          <h2>9. Häufige Fragen & Praxistipps</h2>
+          <div class="manual-card">
+            <h4>Funktioniert CookVegan auch offline?</h4>
+            <p>Ja! Bereits geladene Rezepte und Ihre Einkaufsliste werden lokal im Gerätespeicher vorgehalten, sodass Sie auch ohne Empfang im Supermarkt Zugriff haben.</p>
+
+            <h4 style="margin-top: 1.5rem;">Kann ich ein Rezept nachträglich von Privat auf Geteilt umstellen?</h4>
+            <p>Ja, über das Teilen-Symbol (Share Dialog) im Rezept können Sie jederzeit weitere E-Mail-Adressen hinzufügen oder das Rezept für die Community freigeben.</p>
+
+            <h4 style="margin-top: 1.5rem;">Welche Webseiten werden vom Importer unterstützt?</h4>
+            <p>Nahezu alle modernen Foodblogs, Kochplattformen und Magazinseiten, die das standardisierte <code>schema.org/Recipe</code> JSON-LD Format verwenden.</p>
+          </div>
+        </article>
+
+      </main>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <div class="logo-icon">AW</div>
+            <span>Alex Wodniok</span>
+          </a>
+          <p>Floorball Clock, Floorball Trainertool & CookVegan – Apps von Alexander Wodniok.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Floorball Clock</h4>
+          <ul class="footer-links">
+            <li><a href="floorball-clock.html">App Details</a></li>
+            <li><a href="handbuch.html">Benutzerhandbuch</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trainertool</h4>
+          <ul class="footer-links">
+            <li><a href="trainertool.html">App Details</a></li>
+            <li><a href="trainertool-handbuch.html">Benutzerhandbuch</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CookVegan 🌱</h4>
+          <ul class="footer-links">
+            <li><a href="cookvegan.html">Features</a></li>
+            <li><a href="cookvegan-handbuch.html">Benutzerhandbuch</a></li>
+            <li><a href="cookvegan-handbuch.html#cloud">Cloud-Tresor</a></li>
+            <li><a href="cookvegan-handbuch.html#kochmodus">Koch-Modus</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="apps.html">Alle Apps</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Alexander Wodniok. Alle Rechte vorbehalten.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
