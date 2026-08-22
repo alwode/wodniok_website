@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Offizielles Benutzerhandbuch für Floorball Clock (FVD / IFF 2022): Spielsekretariat, Spielzeitmessung, 2' / 2'+2' / 10' Strafen, Roster, Beamer-Scoreboard & Spielberichte.">
+  <meta name="description" content="Offizielles Benutzerhandbuch für Floorball Clock (FVD / IFF 2022): Spielsekretariat, Spielzeitmessung, Zeitanpassung, 2' / 2'+2' / 10' Strafen-Bearbeitung, Betreuer, Beamer-Scoreboard & offizieller PDF-Spielberichtsbogen.">
   <title>Benutzerhandbuch – Floorball Clock | Alex Wodniok</title>
   <link rel="stylesheet" href="css/style.css?v=2">
 </head>
@@ -46,7 +46,7 @@
       <div class="badge badge-orange">Offizielle Dokumentation (FVD / IFF 2022)</div>
       <h1>Floorball Clock <span class="text-gradient">Benutzerhandbuch</span></h1>
       <p style="font-size: 1.15rem; max-width: 800px;">
-        Vollständige Referenz und Anleitung für das digitale Spielsekretariat. Erfahren Sie alles über die präzise Spielzeitsteuerung, das automatisierte 2' / 2'+2' / 10' Strafen-Management, die Roster-Verwaltung, Live-Hallenanzeigen und den PDF-Spielbericht.
+        Vollständige Referenz und Anleitung für das digitale Spielsekretariat. Erfahren Sie alles über die präzise Spielzeitsteuerung, Zeitanpassung, das automatisierte 2' / 2'+2' / 10' Strafen-Management mit Live-Korrektur, Betreuer-Erfassung, Live-Hallenanzeigen und den offiziellen Floorball-Deutschland PDF-Spielbericht.
       </p>
     </div>
   </section>
@@ -60,16 +60,16 @@
         <h4>Inhaltsverzeichnis</h4>
         <ul class="manual-nav">
           <li><a href="#uebersicht" class="active">1. Übersicht & Architektur</a></li>
-          <li><a href="#spielzeit">2. Spielzeit, Drittel & Overtime</a></li>
+          <li><a href="#spielzeit">2. Spielzeit, Formate & Zeitanpassung</a></li>
           <li><a href="#pausen">3. Pausen & Intermissions</a></li>
           <li><a href="#tore">4. Spielstand & Tore erfassen</a></li>
-          <li><a href="#strafen-arten">5. Strafarten (2', 2'+2', 10')</a></li>
-          <li><a href="#strafen-engine">6. Die Strafen-Logik (Engine)</a></li>
+          <li><a href="#strafen-arten">5. Strafarten (2', 2'+2', 10', MS)</a></li>
+          <li><a href="#strafen-engine">6. Strafen-Logik & Live-Korrektur</a></li>
           <li><a href="#timeout">7. Auszeiten / Timeouts (30s)</a></li>
-          <li><a href="#roster">8. Kader (Roster) & Team-Daten</a></li>
+          <li><a href="#roster">8. Kader, Betreuer (Staff) & Vorlagen</a></li>
           <li><a href="#display">9. Hallenanzeige (Scoreboard)</a></li>
-          <li><a href="#spielbericht">10. Spielbericht & PDF-Export</a></li>
-          <li><a href="#autosave">11. Auto-Save & Wiederherstellung</a></li>
+          <li><a href="#spielbericht">10. Offizieller PDF-Spielbericht</a></li>
+          <li><a href="#autosave">11. Auto-Save & Crash-Schutz</a></li>
           <li><a href="#faq">12. FAQ & Schiedsgericht-Tipps</a></li>
         </ul>
       </aside>
@@ -82,48 +82,56 @@
           <h2>1. Einführung & Systemübersicht</h2>
           <div class="manual-card">
             <p>
-              <strong>Floorball Clock</strong> (<em>Floorball Match Secretary Assistant</em>) fungiert als professionelles digitales Spielsekretariat für den Floorball- und Unihockeysport. Die App ersetzt die herkömmliche Kombination aus Hand-Stoppuhren und handschriftlichen Notizzetteln am Zeitnehmertisch.
+              <strong>Floorball Clock</strong> (<em>Floorball Match Secretary Assistant</em>) fungiert als professionelles digitales Spielsekretariat für den Floorball- und Unihockeysport. Die App ersetzt die herkömmliche Kombination aus Hand-Stoppuhren und unübersichtlichen Papierformularen am Zeitnehmertisch durch ein intelligentes, regelkonformes Gesamtsystem.
             </p>
             <p>
-              Basierend auf den offiziellen Regularien des <strong>FVD / IFF (Regelwerk 2022)</strong> validiert das System komplexe Strafenkonstellationen vollautomatisch und überträgt alle relevanten Daten in Echtzeit an externe Anzeigetafeln, Hallenmonitore oder Beamer.
+              Basierend auf den offiziellen Regularien des <strong>Floorball-Verbandes Deutschland (FVD) und des Internationalen Floorball-Verbandes (IFF 2022)</strong> validiert das System komplexe Strafenkonstellationen vollautomatisch und überträgt alle relevanten Daten in Echtzeit an externe Anzeigetafeln, Hallenmonitore oder Beamer.
             </p>
 
             <div class="callout callout-info">
-              <h5>Cross-Plattform Architektur</h5>
-              <p>Entwickelt mit Flutter und modernem State Management (Riverpod). Läuft nativ auf iPad / iOS-Tablets, Android-Tablets sowie Desktop-Systemen (macOS, Windows, Linux).</p>
+              <h5>Cross-Plattform & Offline-Betrieb</h5>
+              <p>Entwickelt mit Flutter (Riverpod). Läuft nativ auf iPad / iOS-Tablets, iPhone, Android-Tablets sowie macOS und Windows. Funktioniert zu 100% offline ohne Internetverbindung in jeder Sporthalle.</p>
             </div>
           </div>
         </article>
 
         <!-- 2. Spielzeit & Perioden -->
         <article class="manual-section" id="spielzeit">
-          <h2>2. Spielzeit, Perioden & Verlängerung (Overtime)</h2>
+          <h2>2. Spielzeit, flexible Formate & Zeitanpassung</h2>
           <div class="manual-card">
             <p>
-              Die Hauptuhr (<em>The Clock</em>) arbeitet standardmäßig im <strong>Countdown-Modus</strong> (z. B. von <code>20:00</code> herunter auf <code>00:00</code>).
+              Die Hauptuhr arbeitet im <strong>Countdown-Modus</strong> und passt sich flexibel an verschiedene Spielformate an:
             </p>
 
             <div class="step-block">
               <div class="step-number">⏱</div>
               <div class="step-details">
-                <h4>Zehntelsekunden-Präzision im Schlussspurt</h4>
-                <p>In der letzten Spielminute eines Drittels (unter <code>01:00</code>) schaltet die Zeitanzeige automatisch auf die Darstellung von <strong>Zehntelsekunden</strong> um (z. B. <code>00:59.9</code>), um exaktes Stoppen bei Pfiffen zu gewährleisten.</p>
-              </div>
-            </div>
-
-            <div class="step-block">
-              <div class="step-number">▶</div>
-              <div class="step-details">
-                <h4>START / PAUSE Steuerung</h4>
-                <p>Große, treffsichere Schaltflächen ermöglichen das sofortige Starten und Stoppen der Zeit. Bei jedem Pfiff der Schiedsrichter (Freischlag, Tor, Strafe, Unterbrechung) pausiert ein Klick auf <strong>PAUSE</strong> die Spielzeit und simultan alle laufenden Strafen.</p>
+                <h4>Flexible Spielabschnitte & Formate</h4>
+                <p>Unterstützt <strong>Großfeld (5 vs 5)</strong> mit 3 Dritteln (je 20 Minuten), <strong>Kleinfeld (3 vs 3)</strong> mit 2 Hälften (je 20 Minuten) oder Turnierspiele mit 1 durchgehenden Spielzeit. Die Abschnitte werden automatisch passend benannt (z. B. <em>1. Drittel</em>, <em>2. Drittel</em> bzw. <em>1. Hälfte</em>).</p>
               </div>
             </div>
 
             <div class="step-block">
               <div class="step-number">⚡</div>
               <div class="step-details">
-                <h4>Overtime mit Golden Goal (Sudden Death)</h4>
-                <p>Steht es nach dem 3. Drittel unentschieden, geht die Partie in die Verlängerung (Overtime). Es gilt die offizielle <strong>Golden Goal</strong> Regel: Fällt in der Verlängerung ein Tor, beendet die App das Spiel augenblicklich als Siegtreffer.</p>
+                <h4>Schnellanpassung der Spielzeit (-5s .. +5s & ✏️)</h4>
+                <p>Muss die Spielzeit bei Schiedsrichterentscheidungen korrigiert werden, stehen unter der Uhr intuitive Schnelltasten bereit: <code>-5s</code>, <code>-1s</code>, <code>+1s</code>, <code>+5s</code> sowie ein <strong>manueller Uhren-Editor (✏️)</strong> für minutengenaue Justierung.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">🔍</div>
+              <div class="step-details">
+                <h4>Zehntelsekunden-Präzision im Schlussspurt</h4>
+                <p>In der letzten Spielminute eines Abschnitts (unter <code>01:00</code>) schaltet die Zeitanzeige automatisch auf die Darstellung von <strong>Zehntelsekunden</strong> um (z. B. <code>00:59.9</code>), um exaktes Stoppen bei Pfiffen zu gewährleisten.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">🏆</div>
+              <div class="step-details">
+                <h4>Overtime mit Golden Goal & Toggle-Option</h4>
+                <p>In den Spieleinstellungen kann festgelegt werden, ob bei Unentschieden nach regulärer Spielzeit eine <strong>Golden-Goal-Verlängerung (Overtime)</strong> folgt oder ob das Spiel direkt mit einem Unentschieden endet (z. B. bei Vorrunden- und Gruppenspielen).</p>
               </div>
             </div>
 
@@ -145,9 +153,9 @@
               Floorball Clock steuert Pausen automatisch im Spielzyklus (<em>Game Loop</em>):
             </p>
             <ul style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-              <li><strong>Reguläre Drittelpausen:</strong> Nach Ablauf des 1. und 2. Drittels startet automatisch der Pausentimer (Standard: <code>10:00</code> Minuten). Auf dem Scoreboard wird <em>INTERMISSION</em> visualisiert.</li>
-              <li><strong>Pause vor der Overtime:</strong> Endet das 3. Drittel mit einem <strong>Unentschieden</strong>, folgt eine kurze 2-minütige Pause vor Beginn der Verlängerung.</li>
-              <li><strong>Sofortiges Spielende:</strong> Gibt es nach dem 3. Drittel bereits einen regulären Sieger, wird <strong>keine</strong> Pause und keine Overtime gestartet – das Spiel wechselt direkt in den Status <em>GAME FINISHED</em>.</li>
+              <li><strong>Reguläre Drittel-/Halbzeitpausen:</strong> Nach Ablauf eines Abschnitts startet automatisch der Pausentimer (Standard: <code>10:00</code> Minuten). Auf dem Scoreboard wird <em>INTERMISSION</em> visualisiert.</li>
+              <li><strong>Pause vor der Overtime:</strong> Endet die reguläre Spielzeit unentschieden (und ist die Overtime aktiviert), folgt eine kurze 2-minütige Pause vor Beginn der Verlängerung.</li>
+              <li><strong>Reguläres Spielende:</strong> Gibt es einen regulären Sieger, wird keine Verlängerung gestartet – das Spiel wechselt direkt in den Status <em>GAME FINISHED</em>.</li>
             </ul>
           </div>
         </article>
@@ -172,13 +180,13 @@
               <div class="step-number">-</div>
               <div class="step-details">
                 <h4>Tor-Korrektur</h4>
-                <p>Wird ein Tor vom Schiedsrichtergespann aberkannt, reduziert das <strong>- Symbol</strong> den Spielstand.</p>
+                <p>Wird ein Tor vom Schiedsrichtergespann aberkannt, reduziert das <strong>- Symbol</strong> den Spielstand und synchronisiert den Spielbericht.</p>
               </div>
             </div>
 
             <div class="callout callout-tip">
-              <h5>👥 Anzeige der Spieler auf dem Feld</h5>
-              <p>Unterhalb des Spielstands wird in Echtzeit angezeigt, wie viele Feldspieler das jeweilige Team aktuell auf dem Feld hat (z. B. <code>5/5 SPIELER</code> oder <code>4/5 SPIELER</code> bei Unterzahl).</p>
+              <h5>👥 Dynamische Feldspieler-Anzeige</h5>
+              <p>Unterhalb des Spielstands wird in Echtzeit angezeigt, wie viele Feldspieler das jeweilige Team aktuell auf dem Feld hat (z. B. <code>5/5 SPIELER</code> auf Großfeld oder <code>3/3 SPIELER</code> auf Kleinfeld abzüglich aktiver Bankstrafen).</p>
             </div>
           </div>
         </article>
@@ -195,7 +203,7 @@
               <div class="step-number">2'</div>
               <div class="step-details">
                 <h4>2' – Kleine Bankstrafe (Bench Small)</h4>
-                <p>Das Team spielt 2 Minuten in Unterzahl. Die Strafe endet regulär nach 2 Minuten oder <strong>vorzeitig bei einem Gegentor</strong>, sofern sich das Team in Unterzahl befindet.</p>
+                <p>Das Team spielt 2 Minuten in Unterzahl. Die Strafe endet regulär nach 2 Minuten oder <strong>vorzeitig bei einem Powerplay-Gegentor</strong>.</p>
               </div>
             </div>
 
@@ -212,7 +220,7 @@
               <div class="step-number">10'</div>
               <div class="step-details">
                 <h4>10' – Persönliche Strafe (Personal Penalty)</h4>
-                <p>Der Spieler muss für 10 Minuten auf die Strafbank. Das Team spielt <strong>nicht</strong> in Unterzahl (5 gegen 5 bleibt bestehen).</p>
+                <p>Der Spieler muss für 10 Minuten auf die Strafbank. Das Team spielt <strong>nicht</strong> in Unterzahl (Vollbesetzung bleibt bestehen).</p>
               </div>
             </div>
 
@@ -227,24 +235,19 @@
             <div class="step-block">
               <div class="step-number">MS</div>
               <div class="step-details">
-                <h4>Matchstrafe (Match Penalty) & Tech. Matchstrafe</h4>
+                <h4>Matchstrafe (Match Penalty)</h4>
                 <p>Führt zu einer 2'+2' Bankstrafe für das Team sowie zum Ausschluss des Spielers (Eintragung im offiziellen Spielbericht).</p>
               </div>
-            </div>
-
-            <div class="callout callout-warning">
-              <h5>⚠️ Wichtiger Hinweis zu 5-Minuten-Strafen</h5>
-              <p>Gemäß den aktuellen FVD/IFF-Regeln gibt es <strong>keine isolierte 5-Minuten-Strafe</strong> in der App. Schwere Vergehen werden regelkonform über <strong>2'+2'</strong> oder <strong>Matchstrafen</strong> abgebildet.</p>
             </div>
           </div>
         </article>
 
-        <!-- 6. Die Strafen-Logik (Engine) -->
+        <!-- 6. Die Strafen-Logik & Live-Korrektur -->
         <article class="manual-section" id="strafen-engine">
-          <h2>6. Die intelligente Strafen-Engine</h2>
+          <h2>6. Die intelligente Strafen-Engine & Live-Korrektur</h2>
           <div class="manual-card">
             <p>
-              Floorball Clock verfügt über eine hochentwickelte Regellogik (<em>PenaltyRules</em>), die dem Schiedsgericht alle Berechnungen vollautomatisch abnimmt:
+              Floorball Clock verfügt über eine hochentwickelte Regellogik, die dem Schiedsgericht alle Berechnungen vollautomatisch abnimmt:
             </p>
 
             <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem;">
@@ -267,9 +270,13 @@
                   <td style="padding: 0.75rem;"><strong>FIFO (First-In, First-Out)</strong></td>
                   <td style="padding: 0.75rem;">Bei gleicher Priorität läuft die zeitlich zuerst ausgesprochene Strafe zuerst herunter.</td>
                 </tr>
+                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                  <td style="padding: 0.75rem;"><strong>Team-Limit (Delayed Penalties)</strong></td>
+                  <td style="padding: 0.75rem;">Maximal 2 Bankstrafen (Großfeld) bzw. 1 Bankstrafe (Kleinfeld) können pro Team gleichzeitig ticken. Weitere Strafen werden verzögert in die Warteschlange gestellt und rücken automatisch nach.</td>
+                </tr>
                 <tr>
-                  <td style="padding: 0.75rem;"><strong>Team-Limit (Max. 2 Bankstrafen)</strong></td>
-                  <td style="padding: 0.75rem;">Pro Team können maximal 2 Bankstrafen gleichzeitig aktiv ticken (Unterzahl 3 gegen 5). Jede weitere Strafe wird als <em>verzögerte Strafe (Delayed Penalty)</em> in die Warteschlange gestellt und rückt automatisch nach.</td>
+                  <td style="padding: 0.75rem;"><strong>✏️ Live-Korrektur</strong></td>
+                  <td style="padding: 0.75rem;">Laufende Strafen können jederzeit über das Stift-Symbol angeklickt und bezüglich Spielernummer oder verbleibender Restzeit korrigiert werden.</td>
                 </tr>
               </tbody>
             </table>
@@ -293,19 +300,35 @@
           </div>
         </article>
 
-        <!-- 8. Kader (Roster) & Team-Daten -->
+        <!-- 8. Kader, Betreuer & Vorlagen -->
         <article class="manual-section" id="roster">
-          <h2>8. Kader (Roster) & Team-Verwaltung</h2>
+          <h2>8. Kader (Roster), Betreuer-Erfassung (Staff) & Vorlagen</h2>
           <div class="manual-card">
             <p>
-              Über das Personen-Symbol in der App-Leiste gelangen Sie zur Kaderverwaltung (<em>Roster Screen</em>):
+              Über das Personen-Symbol in der App-Leiste gelangen Sie zur Kaderverwaltung (<em>Match Setup & Rosters</em>):
             </p>
 
             <div class="step-block">
               <div class="step-number">👤</div>
               <div class="step-details">
-                <h4>Spieler anlegen & bearbeiten</h4>
-                <p>Erfassen Sie für Heim und Gast die Trikotnummer, Vorname und Nachname sowie Sonderrollen wie <strong>Torhüter (Goalie)</strong> und <strong>Kapitän (C)</strong>.</p>
+                <h4>Spieler anlegen & Sonderrollen</h4>
+                <p>Erfassen Sie Trikotnummer, Vor- und Nachnamen sowie Markierungen für <strong>Torhüter (Goalie / G)</strong> und <strong>Kapitän (C)</strong>.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">👔</div>
+              <div class="step-details">
+                <h4>Offizielle Betreuer-Erfassung (Staff Roster)</h4>
+                <p>Erfassen Sie bis zu <strong>5 offizielle Mannschaftsbetreuer</strong> pro Team (Head Coach, Co-Trainer, Betreuer, Physiotherapeut, Mannschaftsarzt). Diese werden direkt in das offizielle Spielprotokoll übernommen.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">💾</div>
+              <div class="step-details">
+                <h4>Standard-Kader & Team-Vorlagen</h4>
+                <p>Speichern Sie Vereins-Kader als wiederverwendbare Team-Vorlagen ab. So können Sie vor dem Spiel mit einem Fingertipp den kompletten Kader inklusive Betreuern laden.</p>
               </div>
             </div>
 
@@ -314,14 +337,6 @@
               <div class="step-details">
                 <h4>Team-Namen & Vereinslogos</h4>
                 <p>Passen Sie die Team-Namen an und laden Sie individuelle Vereinswappen hoch. Diese werden auf dem externen Scoreboard für Zuschauer präsentiert.</p>
-              </div>
-            </div>
-
-            <div class="step-block">
-              <div class="step-number">🗑</div>
-              <div class="step-details">
-                <h4>Sicherheitsabfragen</h4>
-                <p>Vor dem Löschen von Spielern oder dem Start eines neuen Spiels fordert die App stets eine explizite Bestätigung an, um versehentlichen Datenverlust zu verhindern.</p>
               </div>
             </div>
           </div>
@@ -346,28 +361,30 @@
             <div class="step-block">
               <div class="step-number">💻</div>
               <div class="step-details">
-                <h4>Desktop (macOS, Windows, Linux)</h4>
-                <p>Erstellt ein separates, vollbildfähiges Scoreboard-Fenster für Mehrbildschirm-Setups (unter Linux synchronisiert über einen internen High-Speed WebSocket-Server).</p>
+                <h4>Desktop (macOS, Windows)</h4>
+                <p>Erstellt ein separates, vollbildfähiges Scoreboard-Fenster für Mehrbildschirm- und Beamer-Setups.</p>
               </div>
             </div>
 
             <div class="callout callout-tip">
               <h5>✨ Scoreboard Layout</h5>
-              <p>Große, kontrastreiche Zeitanzeige mit Zehntelsekunden im Schlussspurt, Team-Namen & Logos, aktuelles Drittel, Strafzeiten mit Spielernummern und Phasenkennzeichnung <code>(1/2)</code> sowie aktive Timeout-Countdowns.</p>
+              <p>Große, kontrastreiche Zeitanzeige mit Zehntelsekunden im Schlussspurt, Team-Namen & Logos, aktueller Spielabschnitt, Strafzeiten mit Spielernummern und Phasenkennzeichnung <code>(1/2)</code> sowie aktive Timeout-Countdowns.</p>
             </div>
           </div>
         </article>
 
         <!-- 10. Spielbericht & PDF-Export -->
         <article class="manual-section" id="spielbericht">
-          <h2>10. Spielbericht (Match Report) & PDF-Export</h2>
+          <h2>10. Offizieller Floorball Deutschland Spielbericht (PDF)</h2>
           <div class="manual-card">
             <p>
               Über das Protokoll-Symbol in der Titelleiste öffnen Sie den <strong>Match Report Screen</strong>:
             </p>
             <ul style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-              <li><strong>Chronologischer Spielverlauf:</strong> Lückenlose Aufzeichnung aller Tore (inkl. Schütze & Assist), Strafen (inkl. Vergehen-Codes gem. IFF Offense Codes) und Timeouts.</li>
-              <li><strong>Druck & PDF-Export:</strong> Erstellen Sie mit einem Klick ein druckfertiges, offizielles PDF-Matchblatt zur Weiterleitung an die Staffelleitung oder Verbandssysteme.</li>
+              <li><strong>Offizielles Verbands-Layout:</strong> Generiert einen vollständigen Floorball-Deutschland-Spielberichtsbogen inklusive Spielabschnitts-Ergebnisse, Kaderlisten und Betreuern.</li>
+              <li><strong>Chronologischer Spielverlauf:</strong> Lückenlose Aufzeichnung aller Tore (inkl. Schütze & Assist), Strafen (inkl. offizieller Vergehen-Codes gem. IFF) und Timeouts.</li>
+              <li><strong>Digitale Unterschriften:</strong> Erfassung der Signaturen für 1. Schiedsrichter, 2. Schiedsrichter, Sekretär und beide Kapitäne direkt auf dem Touchscreen.</li>
+              <li><strong>Druck & PDF-Export:</strong> 1-Klick-Export als druckfertiges PDF zur Übergabe an die Staffelleitung, via AirPrint oder zum Kopieren als Text in die Zwischenablage.</li>
             </ul>
           </div>
         </article>
@@ -380,8 +397,8 @@
               Höchste Ausfallsicherheit am Zeitnehmertisch:
             </p>
             <ul style="padding-left: 1.5rem; line-height: 1.8;">
-              <li><strong>Laufende Speicherung:</strong> Der gesamte Spielstand (Restzeit, Tore, Strafen-Timer, Roster und Status) wird alle 5 Sekunden sowie bei jeder Aktion automatisch auf dem Gerät gespeichert.</li>
-              <li><strong>Wiederherstellung:</strong> Sollte die App geschlossen werden, das Tablet den Akkustand verlieren oder neu gestartet werden, stellt Floorball Clock den exakten Spielzustand beim nächsten Start wieder her.</li>
+              <li><strong>Laufende Speicherung:</strong> Der gesamte Spielstand (Restzeit, Tore, Strafen-Timer, Roster, Betreuer und Status) wird alle 5 Sekunden sowie bei jeder Aktion automatisch auf dem Gerät gesichert.</li>
+              <li><strong>Wiederherstellung:</strong> Sollte die App geschlossen werden oder das Tablet neu starten, stellt Floorball Clock den exakten Spielzustand beim nächsten Start lückenlos wieder her.</li>
             </ul>
           </div>
         </article>
@@ -393,8 +410,8 @@
             <h4>Wie verhält sich die App, wenn zwei Strafen exakt zeitgleich enden?</h4>
             <p>In uneindeutigen Situationen öffnet die App einen Schiedsgerichts-Dialog (<em>Entscheidung erforderlich: Welcher Spieler kehrt zurück?</em>), um dem Zeitnehmer die manuelle Entscheidung zu überlassen.</p>
 
-            <h4 style="margin-top: 1.5rem;">Wann darf ein Spieler nach einer 10' persönlichen Strafe zurückkehren?</h4>
-            <p>Gemäß IFF-Regelwerk erst nach Ablauf der 10 Minuten <strong>UND bei der nächsten regulären Spielunterbrechung</strong>.</p>
+            <h4 style="margin-top: 1.5rem;">Können Strafzeiten während des Spiels korrigiert werden?</h4>
+            <p><strong>Ja!</strong> Tippen Sie einfach auf das Stift-Symbol ✏️ neben der Strafe auf dem Bedienfeld, um Spielernummer oder Restzeit anzupassen.</p>
 
             <h4 style="margin-top: 1.5rem;">Funktioniert die App vollständig offline in der Sporthalle?</h4>
             <p><strong>Ja!</strong> Zeitmessung, Strafen-Engine, Huptöne, Beamer-Ausgabe und PDF-Erstellung benötigen keinerlei Internetverbindung.</p>
