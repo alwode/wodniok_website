@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Offizielles Benutzerhandbuch für Floorball Clock (FVD / IFF 2022): Spielsekretariat, Spielzeitmessung, Zeitanpassung, 2' / 2'+2' / 10' Strafen-Bearbeitung, Betreuer, Beamer-Scoreboard & offizieller PDF-Spielberichtsbogen.">
-  <title>Benutzerhandbuch – Floorball Clock | Alex Wodniok</title>
+  <meta name="description" content="Offizielles Benutzerhandbuch für Floorball Clock nach dem Floorball-Regelwerk 2026 (SPRGK 2026 / IFF 2026): Spielsekretariat, Spielzeitmessung (Regel 201.1), Zeitanpassung, 2' / 2'+2' / 10' Strafen-Bearbeitung, Betreuer, Scoreboard & offizieller PDF-Spielberichtsbogen.">
+  <title>Benutzerhandbuch – Floorball Clock (Regelwerk 2026) | Alex Wodniok</title>
   <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
@@ -43,10 +43,10 @@
   <!-- Title Banner -->
   <section class="section" style="padding: 3.5rem 0 2rem; border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
-      <div class="badge badge-orange">Offizielle Dokumentation (FVD / IFF 2022)</div>
+      <div class="badge badge-orange">Offizielle Dokumentation nach Floorball-Regelwerk 2026 (SPRGK / IFF)</div>
       <h1>Floorball Clock <span class="text-gradient">Benutzerhandbuch</span></h1>
       <p style="font-size: 1.15rem; max-width: 800px;">
-        Vollständige Referenz und Anleitung für das digitale Spielsekretariat. Erfahren Sie alles über die präzise Spielzeitsteuerung, Zeitanpassung, das automatisierte 2' / 2'+2' / 10' Strafen-Management mit Live-Korrektur, Betreuer-Erfassung, Live-Hallenanzeigen und den offiziellen Floorball-Deutschland PDF-Spielbericht.
+        Vollständige Referenz und Anleitung für das digitale Spielsekretariat nach den <strong>Floorball-Spielregeln 2026</strong>. Erfahren Sie alles über die präzise Spielzeitsteuerung, aufsteigende Hallenanzeige (Regel 201.1), Zeitanpassung, das automatisierte 2' / 2'+2' / 10' Strafen-Management mit Live-Korrektur, Betreuer-Erfassung und den offiziellen Floorball-Deutschland PDF-Spielbericht.
       </p>
     </div>
   </section>
@@ -60,10 +60,10 @@
         <h4>Inhaltsverzeichnis</h4>
         <ul class="manual-nav">
           <li><a href="#uebersicht" class="active">1. Übersicht & Architektur</a></li>
-          <li><a href="#spielzeit">2. Spielzeit, Formate & Zeitanpassung</a></li>
+          <li><a href="#spielzeit">2. Spielzeit, Formate & Regel 201.1</a></li>
           <li><a href="#pausen">3. Pausen & Intermissions</a></li>
           <li><a href="#tore">4. Spielstand & Tore erfassen</a></li>
-          <li><a href="#strafen-arten">5. Strafarten (2', 2'+2', 10', MS)</a></li>
+          <li><a href="#strafen-arten">5. Strafarten (Regelwerk 2026)</a></li>
           <li><a href="#strafen-engine">6. Strafen-Logik & Live-Korrektur</a></li>
           <li><a href="#timeout">7. Auszeiten / Timeouts (30s)</a></li>
           <li><a href="#roster">8. Kader, Betreuer (Staff) & Vorlagen</a></li>
@@ -85,7 +85,7 @@
               <strong>Floorball Clock</strong> (<em>Floorball Match Secretary Assistant</em>) fungiert als professionelles digitales Spielsekretariat für den Floorball- und Unihockeysport. Die App ersetzt die herkömmliche Kombination aus Hand-Stoppuhren und unübersichtlichen Papierformularen am Zeitnehmertisch durch ein intelligentes, regelkonformes Gesamtsystem.
             </p>
             <p>
-              Basierend auf den offiziellen Regularien des <strong>Floorball-Verbandes Deutschland (FVD) und des Internationalen Floorball-Verbandes (IFF 2022)</strong> validiert das System komplexe Strafenkonstellationen vollautomatisch und überträgt alle relevanten Daten in Echtzeit an externe Anzeigetafeln, Hallenmonitore oder Beamer.
+              Basierend auf den offiziellen <strong>Floorball-Spielregeln Großfeld/Kleinfeld 2026 (SPRGK 2026 / IFF 2026)</strong> validiert das System komplexe Strafenkonstellationen vollautomatisch und überträgt alle relevanten Daten in Echtzeit an externe Anzeigetafeln, Hallenmonitore oder Beamer.
             </p>
 
             <div class="callout callout-info">
@@ -97,10 +97,10 @@
 
         <!-- 2. Spielzeit & Perioden -->
         <article class="manual-section" id="spielzeit">
-          <h2>2. Spielzeit, flexible Formate & Zeitanpassung</h2>
+          <h2>2. Spielzeit, flexible Formate & Hallenuhr (Regel 201.1)</h2>
           <div class="manual-card">
             <p>
-              Die Hauptuhr arbeitet im <strong>Countdown-Modus</strong> und passt sich flexibel an verschiedene Spielformate an:
+              Die Zeitmessung der App bildet die Anforderungen der Schiedsrichter und Zuschauer perfekt ab:
             </p>
 
             <div class="step-block">
@@ -108,6 +108,14 @@
               <div class="step-details">
                 <h4>Flexible Spielabschnitte & Formate</h4>
                 <p>Unterstützt <strong>Großfeld (5 vs 5)</strong> mit 3 Dritteln (je 20 Minuten), <strong>Kleinfeld (3 vs 3)</strong> mit 2 Hälften (je 20 Minuten) oder Turnierspiele mit 1 durchgehenden Spielzeit. Die Abschnitte werden automatisch passend benannt (z. B. <em>1. Drittel</em>, <em>2. Drittel</em> bzw. <em>1. Hälfte</em>).</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">📈</div>
+              <div class="step-details">
+                <h4>Aufsteigende Spielzeit auf dem Scoreboard (Regel 201.1)</h4>
+                <p>Gemäß IFF/SPRGK Regel 201.1 zeigt das externe Hallen-Scoreboard für Zuschauer und Spieler die Spielzeit <strong>aufsteigend</strong> an (<code>00:00 -> 20:00</code>), während das Schiedsgericht auf dem Steuerungs-Tablet die exakte Countdown-Restzeit im Blick behält.</p>
               </div>
             </div>
 
@@ -123,7 +131,7 @@
               <div class="step-number">🔍</div>
               <div class="step-details">
                 <h4>Zehntelsekunden-Präzision im Schlussspurt</h4>
-                <p>In der letzten Spielminute eines Abschnitts (unter <code>01:00</code>) schaltet die Zeitanzeige automatisch auf die Darstellung von <strong>Zehntelsekunden</strong> um (z. B. <code>00:59.9</code>), um exaktes Stoppen bei Pfiffen zu gewährleisten.</p>
+                <p>In der letzten Spielminute eines Abschnitts (unter <code>01:00</code>) schaltet die Countdown-Anzeige am Sekretariatstisch automatisch auf <strong>Zehntelsekunden</strong> um (z. B. <code>00:59.9</code>), um exaktes Stoppen bei Pfiffen zu gewährleisten.</p>
               </div>
             </div>
 
@@ -154,7 +162,7 @@
             </p>
             <ul style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
               <li><strong>Reguläre Drittel-/Halbzeitpausen:</strong> Nach Ablauf eines Abschnitts startet automatisch der Pausentimer (Standard: <code>10:00</code> Minuten). Auf dem Scoreboard wird <em>INTERMISSION</em> visualisiert.</li>
-              <li><strong>Pause vor der Overtime:</strong> Endet die reguläre Spielzeit unentschieden (und ist die Overtime aktiviert), folgt eine kurze 2-minütige Pause vor Beginn der Verlängerung.</li>
+              <li><strong>Pause vor der Overtime:</strong> Endet die reguläre Spielzeit unentschieden (und ist die Overtime aktiviert), folgt eine 2-minütige Vorbereitungspause vor Beginn der Verlängerung.</li>
               <li><strong>Reguläres Spielende:</strong> Gibt es einen regulären Sieger, wird keine Verlängerung gestartet – das Spiel wechselt direkt in den Status <em>GAME FINISHED</em>.</li>
             </ul>
           </div>
@@ -193,16 +201,16 @@
 
         <!-- 5. Strafarten -->
         <article class="manual-section" id="strafen-arten">
-          <h2>5. Unterstützte Strafarten (FVD / IFF 2022)</h2>
+          <h2>5. Unterstützte Strafarten (Floorball-Regelwerk 2026)</h2>
           <div class="manual-card">
             <p>
-              In Floorball Clock sind exakt die im IFF-Regelwerk definierten Strafarten hinterlegt:
+              In Floorball Clock sind exakt die im offiziellen Regelwerk 2026 (SPRGK / IFF) definierten Strafarten hinterlegt:
             </p>
 
             <div class="step-block">
               <div class="step-number">2'</div>
               <div class="step-details">
-                <h4>2' – Kleine Bankstrafe (Bench Small)</h4>
+                <h4>2' – Kleine Bankstrafe (Bench Minor)</h4>
                 <p>Das Team spielt 2 Minuten in Unterzahl. Die Strafe endet regulär nach 2 Minuten oder <strong>vorzeitig bei einem Powerplay-Gegentor</strong>.</p>
               </div>
             </div>
@@ -210,7 +218,7 @@
             <div class="step-block">
               <div class="step-number">2'+2'</div>
               <div class="step-details">
-                <h4>2'+2' – Doppelte Bankstrafe (Bench Double Small)</h4>
+                <h4>2'+2' – Große Bankstrafe (Double Bench Minor)</h4>
                 <p>Wird als Sequenz von zwei 2-Minuten-Strafen behandelt. Auf der Anzeige wird die Zeit mit Phase <code>(1/2)</code> bzw. <code>(2/2)</code> dargestellt.</p>
                 <p><em>Gegentor-Regel:</em> Fällt ein Gegentor in Phase 1, wird Phase 1 sofort beendet und Phase 2 (2:00 Min) beginnt unmittelbar. Fällt ein Gegentor in Phase 2, endet die Strafe komplett.</p>
               </div>
@@ -220,15 +228,15 @@
               <div class="step-number">10'</div>
               <div class="step-details">
                 <h4>10' – Persönliche Strafe (Personal Penalty)</h4>
-                <p>Der Spieler muss für 10 Minuten auf die Strafbank. Das Team spielt <strong>nicht</strong> in Unterzahl (Vollbesetzung bleibt bestehen).</p>
+                <p>Der Spieler muss für 10 Minuten auf die Strafbank. Das Team spielt <strong>nicht</strong> in Unterzahl (Vollbesetzung bleibt bestehen). Rückkehr erst nach Ablauf und bei nächster Spielunterbrechung.</p>
               </div>
             </div>
 
             <div class="step-block">
               <div class="step-number">2'+10'</div>
               <div class="step-details">
-                <h4>2' + 10' – Unsportlichkeit (Bench Small + Personal)</h4>
-                <p>Kombination aus Bank- und persönlicher Strafe. Die 2' Bankstrafe läuft zuerst ab. Die 10' persönliche Strafe pausiert und startet erst, sobald die 2' Strafe abgesessen ist.</p>
+                <h4>2' + 10' – Unsportlichkeit (Bench Minor + Personal)</h4>
+                <p>Kombination aus Bank- und persönlicher Strafe. Die 2' Bankstrafe läuft zuerst ab. Die 10' persönliche Strafe pausiert und startet erst, sobald die 2' Strafe abgesessen ist ("Shortest/Hardest First").</p>
               </div>
             </div>
 
@@ -236,8 +244,13 @@
               <div class="step-number">MS</div>
               <div class="step-details">
                 <h4>Matchstrafe (Match Penalty)</h4>
-                <p>Führt zu einer 2'+2' Bankstrafe für das Team sowie zum Ausschluss des Spielers (Eintragung im offiziellen Spielbericht).</p>
+                <p>Führt zu einer 2'+2' Großen Bankstrafe für das Team sowie zum sofortigen Ausschluss des Spielers (Eintragung im offiziellen Spielbericht).</p>
               </div>
+            </div>
+
+            <div class="callout callout-info">
+              <h5>ℹ️ Bestätigung: Entfall der 5-Minuten-Strafe</h5>
+              <p>Gemäß den aktuellen Spielregeln 2026 gibt es <strong>keine isolierte 5-Minuten-Strafe</strong> im Floorball. Schwere Vergehen werden regelkonform über <strong>2'+2'</strong> oder <strong>Matchstrafen</strong> abgebildet.</p>
             </div>
           </div>
         </article>
@@ -273,6 +286,10 @@
                 <tr style="border-bottom: 1px solid var(--border-subtle);">
                   <td style="padding: 0.75rem;"><strong>Team-Limit (Delayed Penalties)</strong></td>
                   <td style="padding: 0.75rem;">Maximal 2 Bankstrafen (Großfeld) bzw. 1 Bankstrafe (Kleinfeld) können pro Team gleichzeitig ticken. Weitere Strafen werden verzögert in die Warteschlange gestellt und rücken automatisch nach.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                  <td style="padding: 0.75rem;"><strong>Konfliktlösung (Regel 603.2)</strong></td>
+                  <td style="padding: 0.75rem;">Enden zwei Strafen exakt zeitgleich, unterstützt die App das Schiedsgericht durch einen geführten Entscheidungsdialog, welcher Spieler das Feld zuerst betritt.</td>
                 </tr>
                 <tr>
                   <td style="padding: 0.75rem;"><strong>✏️ Live-Korrektur</strong></td>
@@ -367,8 +384,8 @@
             </div>
 
             <div class="callout callout-tip">
-              <h5>✨ Scoreboard Layout</h5>
-              <p>Große, kontrastreiche Zeitanzeige mit Zehntelsekunden im Schlussspurt, Team-Namen & Logos, aktueller Spielabschnitt, Strafzeiten mit Spielernummern und Phasenkennzeichnung <code>(1/2)</code> sowie aktive Timeout-Countdowns.</p>
+              <h5>✨ Scoreboard Layout gem. Regel 201.1</h5>
+              <p>Aufsteigende Spielzeitanzeige (<code>00:00 -> 20:00</code>), Team-Namen & Logos, aktueller Spielabschnitt, Strafzeiten mit Spielernummern und Phasenkennzeichnung <code>(1/2)</code> sowie aktive Timeout-Countdowns.</p>
             </div>
           </div>
         </article>
@@ -408,10 +425,13 @@
           <h2>12. Häufige Fragen & Praxistipps</h2>
           <div class="manual-card">
             <h4>Wie verhält sich die App, wenn zwei Strafen exakt zeitgleich enden?</h4>
-            <p>In uneindeutigen Situationen öffnet die App einen Schiedsgerichts-Dialog (<em>Entscheidung erforderlich: Welcher Spieler kehrt zurück?</em>), um dem Zeitnehmer die manuelle Entscheidung zu überlassen.</p>
+            <p>Gemäß IFF Regel 603.2 öffnet die App einen Schiedsgerichts-Dialog (<em>Entscheidung erforderlich: Welcher Spieler kehrt zurück?</em>), um dem Zeitnehmer die manuelle Entscheidung zu überlassen.</p>
 
             <h4 style="margin-top: 1.5rem;">Können Strafzeiten während des Spiels korrigiert werden?</h4>
             <p><strong>Ja!</strong> Tippen Sie einfach auf das Stift-Symbol ✏️ neben der Strafe auf dem Bedienfeld, um Spielernummer oder Restzeit anzupassen.</p>
+
+            <h4 style="margin-top: 1.5rem;">Warum zählt das Scoreboard aufwärts und das Bedienfeld abwärts?</h4>
+            <p>Gemäß <strong>Regel 201.1</strong> der Floorball-Spielregeln 2026 soll die Hallenanzeige für Zuschauer die verstrichene Spielzeit aufsteigend darstellen, während der Zeitnehmer die verbleibende Countdown-Zeit exakt kontrolliert.</p>
 
             <h4 style="margin-top: 1.5rem;">Funktioniert die App vollständig offline in der Sporthalle?</h4>
             <p><strong>Ja!</strong> Zeitmessung, Strafen-Engine, Huptöne, Beamer-Ausgabe und PDF-Erstellung benötigen keinerlei Internetverbindung.</p>

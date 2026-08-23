@@ -4,7 +4,7 @@ Moderne, responsive Entwickler-Website und App-Portfolio von **Alexander Wodniok
 
 ## 📱 Enthaltene App-Präsentationen & Handbücher
 
-- **[Floorball Clock](floorball-clock.html)**: Digitales Spielsekretariat & Hallenuhr nach den offiziellen FVD/IFF-2022-Regeln mit Zehntelsekunden-Genauigkeit, 2' / 2'+2' / 10' Strafen-Engine, Roster-Verwaltung und PDF-Spielbericht.
+- **[Floorball Clock](floorball-clock.html)**: Digitales Spielsekretariat & Hallenuhr nach den offiziellen Floorball-Spielregeln 2026 (SPRGK / IFF) mit Zehntelsekunden-Genauigkeit, aufsteigender Hallenanzeige (Regel 201.1), 2' / 2'+2' / 10' Strafen-Engine, Betreuer-Erfassung und offiziellem PDF-Spielberichtsbogen.
   - [Floorball Clock Handbuch](handbuch.html)
 - **[Floorball Trainertool](trainertool.html)**: Die All-in-One Trainingsplanungs-App für Floorball-Trainer mit Übungsdatenbank nach Kategorien, Taktikskizzen, Trainingsablauf-Planung und PDF-Export mit E-Mail-Versand.
   - [Trainertool Handbuch](trainertool-handbuch.html)
