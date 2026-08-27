@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Offizielles Benutzerhandbuch für Floorball Clock nach dem Floorball-Regelwerk 2026 (SPRGK 2026 / IFF 2026): Spielsekretariat, Spielzeitmessung (Regel 201.1), Zeitanpassung, 2' / 2'+2' / 10' Strafen-Bearbeitung, Betreuer, Scoreboard & offizieller PDF-Spielberichtsbogen.">
+  <meta name="description" content="Offizielles Benutzerhandbuch für Floorball Clock nach dem Floorball-Regelwerk 2026 (SPRGK 2026 / IFF 2026): Spielsekretariat, Spielzeitmessung (Regel 201.1), Zeitanpassung, 2' / 2'+2' / 10' Strafen-Bearbeitung, DE/EN Mehrsprachigkeit, Betreuer, Scoreboard & offizieller PDF-Spielberichtsbogen.">
   <title>Benutzerhandbuch – Floorball Clock (Regelwerk 2026) | Alex Wodniok</title>
   <link rel="stylesheet" href="css/style.css?v=2">
 </head>
@@ -46,7 +46,7 @@
       <div class="badge badge-orange">Offizielle Dokumentation nach Floorball-Regelwerk 2026 (SPRGK / IFF)</div>
       <h1>Floorball Clock <span class="text-gradient">Benutzerhandbuch</span></h1>
       <p style="font-size: 1.15rem; max-width: 800px;">
-        Vollständige Referenz und Anleitung für das digitale Spielsekretariat nach den <strong>Floorball-Spielregeln 2026</strong>. Erfahren Sie alles über die präzise Spielzeitsteuerung, aufsteigende Hallenanzeige (Regel 201.1), Zeitanpassung, das automatisierte 2' / 2'+2' / 10' Strafen-Management mit Live-Korrektur, Betreuer-Erfassung und den offiziellen Floorball-Deutschland PDF-Spielbericht.
+        Vollständige Referenz und Anleitung für das digitale Spielsekretariat nach den <strong>Floorball-Spielregeln 2026</strong>. Erfahren Sie alles über die präzise Spielzeitsteuerung, aufsteigende Hallenanzeige (Regel 201.1), Zeitanpassung, das automatisierte 2' / 2'+2' / 10' Strafen-Management mit Live-Korrektur, Betreuer-Erfassung, zweisprachigen Betrieb (DE/EN) und den offiziellen Floorball-Deutschland PDF-Spielbericht.
       </p>
     </div>
   </section>
@@ -89,8 +89,8 @@
             </p>
 
             <div class="callout callout-info">
-              <h5>Cross-Plattform & Offline-Betrieb</h5>
-              <p>Entwickelt mit Flutter (Riverpod). Läuft nativ auf iPad / iOS-Tablets, iPhone, Android-Tablets sowie macOS und Windows. Funktioniert zu 100% offline ohne Internetverbindung in jeder Sporthalle.</p>
+              <h5>Cross-Plattform, Offline-Betrieb & Mehrsprachigkeit</h5>
+              <p>Entwickelt mit Flutter (Riverpod). Läuft nativ auf iPad / iOS-Tablets (ab iOS 15), iPhone, Android-Tablets & Smartphones sowie macOS und Windows. Bietet vollständige zweisprachige Unterstützung (<strong>Deutsch & Englisch</strong>) und funktioniert zu 100% offline ohne Internetverbindung.</p>
             </div>
           </div>
         </article>
@@ -161,9 +161,9 @@
               Floorball Clock steuert Pausen automatisch im Spielzyklus (<em>Game Loop</em>):
             </p>
             <ul style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-              <li><strong>Reguläre Drittel-/Halbzeitpausen:</strong> Nach Ablauf eines Abschnitts startet automatisch der Pausentimer (Standard: <code>10:00</code> Minuten). Auf dem Scoreboard wird <em>INTERMISSION</em> visualisiert.</li>
+              <li><strong>Reguläre Drittel-/Halbzeitpausen:</strong> Nach Ablauf eines Abschnitts startet automatisch der Pausentimer (Standard: <code>10:00</code> Minuten). Auf dem Scoreboard wird <em>PAUSE / INTERMISSION</em> mit Countdown visualisiert.</li>
               <li><strong>Pause vor der Overtime:</strong> Endet die reguläre Spielzeit unentschieden (und ist die Overtime aktiviert), folgt eine 2-minütige Vorbereitungspause vor Beginn der Verlängerung.</li>
-              <li><strong>Reguläres Spielende:</strong> Gibt es einen regulären Sieger, wird keine Verlängerung gestartet – das Spiel wechselt direkt in den Status <em>GAME FINISHED</em>.</li>
+              <li><strong>Reguläres Spielende:</strong> Gibt es einen regulären Sieger, wird keine Verlängerung gestartet – das Spiel wechselt direkt in den Status <em>SPIEL ENDE / GAME FINISHED</em>.</li>
             </ul>
           </div>
         </article>
@@ -344,8 +344,8 @@
             <div class="step-block">
               <div class="step-number">💾</div>
               <div class="step-details">
-                <h4>Standard-Kader & Team-Vorlagen</h4>
-                <p>Speichern Sie Vereins-Kader als wiederverwendbare Team-Vorlagen ab. So können Sie vor dem Spiel mit einem Fingertipp den kompletten Kader inklusive Betreuern laden.</p>
+                <h4>Standard-Kader & Team-Vorlagen mit Logos</h4>
+                <p>Speichern Sie Vereins-Kader als wiederverwendbare Team-Vorlagen ab. Hochgeladene Vereinslogos werden dauerhaft gesichert und zusammen mit dem Kader geladen.</p>
               </div>
             </div>
 
@@ -364,7 +364,7 @@
           <h2>9. Hallenanzeige / Scoreboard auf externen Monitoren</h2>
           <div class="manual-card">
             <p>
-              Floorball Clock bietet native Multi-Display-Unterstützung für alle Plattformen:
+              Floorball Clock bietet native Multi-Display-Unterstützung für alle Plattformen mit automatischem, responsivem Layout:
             </p>
 
             <div class="step-block">
@@ -385,7 +385,7 @@
 
             <div class="callout callout-tip">
               <h5>✨ Scoreboard Layout gem. Regel 201.1</h5>
-              <p>Aufsteigende Spielzeitanzeige (<code>00:00 -> 20:00</code>), Team-Namen & Logos, aktueller Spielabschnitt, Strafzeiten mit Spielernummern und Phasenkennzeichnung <code>(1/2)</code> sowie aktive Timeout-Countdowns.</p>
+              <p>Aufsteigende Spielzeitanzeige (<code>00:00 -> 20:00</code>), Team-Namen & Logos, aktueller Spielabschnitt, Strafzeiten mit Spielernummern und Phasenkennzeichnung <code>(1/2)</code>, Pausen-Countdowns sowie aktive Timeout-Countdowns.</p>
             </div>
           </div>
         </article>
@@ -398,7 +398,8 @@
               Über das Protokoll-Symbol in der Titelleiste öffnen Sie den <strong>Match Report Screen</strong>:
             </p>
             <ul style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-              <li><strong>Offizielles Verbands-Layout:</strong> Generiert einen vollständigen Floorball-Deutschland-Spielberichtsbogen inklusive Spielabschnitts-Ergebnisse, Kaderlisten und Betreuern.</li>
+              <li><strong>Offizielles Verbands-Layout:</strong> Generiert einen vollständigen Floorball-Deutschland-Spielberichtsbogen inklusive Spielabschnitts-Ergebnisse, Kaderlisten und Betreuern mit exakter Ausrichtung der Verbands-Ankreuzfelder.</li>
+              <li><strong>Interaktive PDF-Vorschau:</strong> Dedizierter Vorschaubildschirm mit Zoom, Seitenansicht und direkter Druck- und Teilen-Option.</li>
               <li><strong>Chronologischer Spielverlauf:</strong> Lückenlose Aufzeichnung aller Tore (inkl. Schütze & Assist), Strafen (inkl. offizieller Vergehen-Codes gem. IFF) und Timeouts.</li>
               <li><strong>Digitale Unterschriften:</strong> Erfassung der Signaturen für 1. Schiedsrichter, 2. Schiedsrichter, Sekretär und beide Kapitäne direkt auf dem Touchscreen.</li>
               <li><strong>Druck & PDF-Export:</strong> 1-Klick-Export als druckfertiges PDF zur Übergabe an die Staffelleitung, via AirPrint oder zum Kopieren als Text in die Zwischenablage.</li>
@@ -432,6 +433,9 @@
 
             <h4 style="margin-top: 1.5rem;">Warum zählt das Scoreboard aufwärts und das Bedienfeld abwärts?</h4>
             <p>Gemäß <strong>Regel 201.1</strong> der Floorball-Spielregeln 2026 soll die Hallenanzeige für Zuschauer die verstrichene Spielzeit aufsteigend darstellen, während der Zeitnehmer die verbleibende Countdown-Zeit exakt kontrolliert.</p>
+
+            <h4 style="margin-top: 1.5rem;">Unterstützt die App mehrere Sprachen?</h4>
+            <p><strong>Ja!</strong> Floorball Clock ist vollständig in <strong>Deutsch und Englisch</strong> verfügbar und passt sich automatisch den Systemeinstellungen Ihres Geräts an.</p>
 
             <h4 style="margin-top: 1.5rem;">Funktioniert die App vollständig offline in der Sporthalle?</h4>
             <p><strong>Ja!</strong> Zeitmessung, Strafen-Engine, Huptöne, Beamer-Ausgabe und PDF-Erstellung benötigen keinerlei Internetverbindung.</p>
