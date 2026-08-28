@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Offizielles Benutzerhandbuch für Floorball Clock nach dem Floorball-Regelwerk 2026 (SPRGK 2026 / IFF 2026): Spielsekretariat, Spielzeitmessung (Regel 201.1), Zeitanpassung, 2' / 2'+2' / 10' Strafen-Bearbeitung, DE/EN Mehrsprachigkeit, Betreuer, Scoreboard & offizieller PDF-Spielberichtsbogen.">
+  <meta name="description" content="Offizielles Benutzerhandbuch für Floorball Clock nach dem Floorball-Regelwerk 2026 (SPRGK 2026 / IFF 2026): Spielsekretariat, Spielzeitmessung (Regel 201.1), Zeitanpassung, Penaltyschießen (Shootout), 2' / 2'+2' / 10' Strafen-Bearbeitung, DE/EN Mehrsprachigkeit, Betreuer, Scoreboard & offizieller PDF-Spielberichtsbogen.">
   <title>Benutzerhandbuch – Floorball Clock (Regelwerk 2026) | Alex Wodniok</title>
   <link rel="stylesheet" href="css/style.css?v=2">
 </head>
@@ -46,7 +46,7 @@
       <div class="badge badge-orange">Offizielle Dokumentation nach Floorball-Regelwerk 2026 (SPRGK / IFF)</div>
       <h1>Floorball Clock <span class="text-gradient">Benutzerhandbuch</span></h1>
       <p style="font-size: 1.15rem; max-width: 800px;">
-        Vollständige Referenz und Anleitung für das digitale Spielsekretariat nach den <strong>Floorball-Spielregeln 2026</strong>. Erfahren Sie alles über die präzise Spielzeitsteuerung, aufsteigende Hallenanzeige (Regel 201.1), Zeitanpassung, das automatisierte 2' / 2'+2' / 10' Strafen-Management mit Live-Korrektur, Betreuer-Erfassung, zweisprachigen Betrieb (DE/EN) und den offiziellen Floorball-Deutschland PDF-Spielbericht.
+        Vollständige Referenz und Anleitung für das digitale Spielsekretariat nach den <strong>Floorball-Spielregeln 2026</strong>. Erfahren Sie alles über die präzise Spielzeitsteuerung, aufsteigende Hallenanzeige (Regel 201.1), Zeitanpassung, Penaltyschießen (Shootout), das automatisierte 2' / 2'+2' / 10' Strafen-Management mit Live-Korrektur, Betreuer-Erfassung, zweisprachigen Betrieb (DE/EN) und den offiziellen Floorball-Deutschland PDF-Spielbericht.
       </p>
     </div>
   </section>
@@ -63,14 +63,15 @@
           <li><a href="#spielzeit">2. Spielzeit, Formate & Regel 201.1</a></li>
           <li><a href="#pausen">3. Pausen & Intermissions</a></li>
           <li><a href="#tore">4. Spielstand & Tore erfassen</a></li>
-          <li><a href="#strafen-arten">5. Strafarten (Regelwerk 2026)</a></li>
-          <li><a href="#strafen-engine">6. Strafen-Logik & Live-Korrektur</a></li>
-          <li><a href="#timeout">7. Auszeiten / Timeouts (30s)</a></li>
-          <li><a href="#roster">8. Kader, Betreuer (Staff) & Vorlagen</a></li>
-          <li><a href="#display">9. Hallenanzeige (Scoreboard)</a></li>
-          <li><a href="#spielbericht">10. Offizieller PDF-Spielbericht</a></li>
-          <li><a href="#autosave">11. Auto-Save & Crash-Schutz</a></li>
-          <li><a href="#faq">12. FAQ & Schiedsgericht-Tipps</a></li>
+          <li><a href="#shootout">5. Penaltyschießen (Shootout)</a></li>
+          <li><a href="#strafen-arten">6. Strafarten (Regelwerk 2026)</a></li>
+          <li><a href="#strafen-engine">7. Strafen-Logik & Live-Korrektur</a></li>
+          <li><a href="#timeout">8. Auszeiten / Timeouts (30s)</a></li>
+          <li><a href="#roster">9. Kader, Betreuer & Vorlagen</a></li>
+          <li><a href="#display">10. Hallenanzeige (Scoreboard)</a></li>
+          <li><a href="#spielbericht">11. Offizieller PDF-Spielbericht</a></li>
+          <li><a href="#autosave">12. Auto-Save & Crash-Schutz</a></li>
+          <li><a href="#faq">13. FAQ & Schiedsgericht-Tipps</a></li>
         </ul>
       </aside>
 
@@ -199,9 +200,51 @@
           </div>
         </article>
 
-        <!-- 5. Strafarten -->
+        <!-- 5. Penaltyschießen (Shootout) -->
+        <article class="manual-section" id="shootout">
+          <h2>5. Penaltyschießen (Shootout) nach IFF-Reglement</h2>
+          <div class="manual-card">
+            <p>
+              Endet ein K.o.- oder Playoff-Spiel auch nach der Overtime unentschieden, schaltet Floorball Clock nahtlos in den <strong>Penalty-Shootout-Modus</strong> um:
+            </p>
+
+            <div class="step-block">
+              <div class="step-number">🥅</div>
+              <div class="step-details">
+                <h4>5 reguläre Schützen pro Team</h4>
+                <p>Jedes Team nominiert 5 Schützen aus dem aktuellen Spielkader. Die App führt das Schiedsgericht abwechselnd durch die Versuche von Heim- und Gastteam.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">✓ / ✗</div>
+              <div class="step-details">
+                <h4>Einfache Treffer-Erfassung & Validierung</h4>
+                <p>Für jeden Schützen wird per Fingertipp protokolliert, ob der Penalty verwandelt (<strong>Tor ✓</strong>) oder vergeben (<strong>Kein Tor ✗</strong>) wurde. Die App berechnet den vorzeitigen Sieg, sobald ein Team uneinholbar führt.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">⚡</div>
+              <div class="step-details">
+                <h4>Sudden-Death-Verlängerung bei Gleichstand</h4>
+                <p>Steht es nach 5 Runden unentschieden, wechselt das System automatisch in das <em>Sudden-Death-Penaltyschießen</em> (1-gegen-1-Runden bis zur Entscheidung).</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">🖥️</div>
+              <div class="step-details">
+                <h4>Scoreboard & PDF-Integration</h4>
+                <p>Die Treffer werden in Echtzeit auf dem externen Hallen-Scoreboard für alle Zuschauer visualisiert und automatisch im offiziellen PDF-Spielberichtsbogen dokumentiert.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Strafarten -->
         <article class="manual-section" id="strafen-arten">
-          <h2>5. Unterstützte Strafarten (Floorball-Regelwerk 2026)</h2>
+          <h2>6. Unterstützte Strafarten (Floorball-Regelwerk 2026)</h2>
           <div class="manual-card">
             <p>
               In Floorball Clock sind exakt die im offiziellen Regelwerk 2026 (SPRGK / IFF) definierten Strafarten hinterlegt:
@@ -255,9 +298,9 @@
           </div>
         </article>
 
-        <!-- 6. Die Strafen-Logik & Live-Korrektur -->
+        <!-- 7. Die Strafen-Logik & Live-Korrektur -->
         <article class="manual-section" id="strafen-engine">
-          <h2>6. Die intelligente Strafen-Engine & Live-Korrektur</h2>
+          <h2>7. Die intelligente Strafen-Engine & Live-Korrektur</h2>
           <div class="manual-card">
             <p>
               Floorball Clock verfügt über eine hochentwickelte Regellogik, die dem Schiedsgericht alle Berechnungen vollautomatisch abnimmt:
@@ -300,9 +343,9 @@
           </div>
         </article>
 
-        <!-- 7. Timeouts -->
+        <!-- 8. Timeouts -->
         <article class="manual-section" id="timeout">
-          <h2>7. Auszeiten / Timeouts (30 Sekunden)</h2>
+          <h2>8. Auszeiten / Timeouts (30 Sekunden)</h2>
           <div class="manual-card">
             <p>
               Jedes Team hat pro Spiel Anspruch auf <strong>genau ein Timeout von 30 Sekunden</strong>:
@@ -317,9 +360,9 @@
           </div>
         </article>
 
-        <!-- 8. Kader, Betreuer & Vorlagen -->
+        <!-- 9. Kader, Betreuer & Vorlagen -->
         <article class="manual-section" id="roster">
-          <h2>8. Kader (Roster), Betreuer-Erfassung (Staff) & Vorlagen</h2>
+          <h2>9. Kader (Roster), Betreuer-Erfassung (Staff) & Vorlagen</h2>
           <div class="manual-card">
             <p>
               Über das Personen-Symbol in der App-Leiste gelangen Sie zur Kaderverwaltung (<em>Match Setup & Rosters</em>):
@@ -359,9 +402,9 @@
           </div>
         </article>
 
-        <!-- 9. Hallenanzeige (Scoreboard) -->
+        <!-- 10. Hallenanzeige (Scoreboard) -->
         <article class="manual-section" id="display">
-          <h2>9. Hallenanzeige / Scoreboard auf externen Monitoren</h2>
+          <h2>10. Hallenanzeige / Scoreboard auf externen Monitoren</h2>
           <div class="manual-card">
             <p>
               Floorball Clock bietet native Multi-Display-Unterstützung für alle Plattformen mit automatischem, responsivem Layout:
@@ -385,20 +428,20 @@
 
             <div class="callout callout-tip">
               <h5>✨ Scoreboard Layout gem. Regel 201.1</h5>
-              <p>Aufsteigende Spielzeitanzeige (<code>00:00 -> 20:00</code>), Team-Namen & Logos, aktueller Spielabschnitt, Strafzeiten mit Spielernummern und Phasenkennzeichnung <code>(1/2)</code>, Pausen-Countdowns sowie aktive Timeout-Countdowns.</p>
+              <p>Aufsteigende Spielzeitanzeige (<code>00:00 -> 20:00</code>), Team-Namen & Logos, aktueller Spielabschnitt, Strafzeiten mit Spielernummern und Phasenkennzeichnung <code>(1/2)</code>, Pausen-Countdowns, aktive Timeout-Countdowns und Shootout-Ergebnisse.</p>
             </div>
           </div>
         </article>
 
-        <!-- 10. Spielbericht & PDF-Export -->
+        <!-- 11. Spielbericht & PDF-Export -->
         <article class="manual-section" id="spielbericht">
-          <h2>10. Offizieller Floorball Deutschland Spielbericht (PDF)</h2>
+          <h2>11. Offizieller Floorball Deutschland Spielbericht (PDF)</h2>
           <div class="manual-card">
             <p>
               Über das Protokoll-Symbol in der Titelleiste öffnen Sie den <strong>Match Report Screen</strong>:
             </p>
             <ul style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-              <li><strong>Offizielles Verbands-Layout:</strong> Generiert einen vollständigen Floorball-Deutschland-Spielberichtsbogen inklusive Spielabschnitts-Ergebnisse, Kaderlisten und Betreuern mit exakter Ausrichtung der Verbands-Ankreuzfelder.</li>
+              <li><strong>Offizielles Verbands-Layout:</strong> Generiert einen vollständigen Floorball-Deutschland-Spielberichtsbogen inklusive Spielabschnitts-Ergebnisse, Penaltyschützen, Kaderlisten und Betreuern mit exakter Ausrichtung der Verbands-Ankreuzfelder.</li>
               <li><strong>Interaktive PDF-Vorschau:</strong> Dedizierter Vorschaubildschirm mit Zoom, Seitenansicht und direkter Druck- und Teilen-Option.</li>
               <li><strong>Chronologischer Spielverlauf:</strong> Lückenlose Aufzeichnung aller Tore (inkl. Schütze & Assist), Strafen (inkl. offizieller Vergehen-Codes gem. IFF) und Timeouts.</li>
               <li><strong>Digitale Unterschriften:</strong> Erfassung der Signaturen für 1. Schiedsrichter, 2. Schiedsrichter, Sekretär und beide Kapitäne direkt auf dem Touchscreen.</li>
@@ -407,25 +450,28 @@
           </div>
         </article>
 
-        <!-- 11. Auto-Save -->
+        <!-- 12. Auto-Save -->
         <article class="manual-section" id="autosave">
-          <h2>11. Zustandsspeicherung & Auto-Save (Crash-Sicherheit)</h2>
+          <h2>12. Zustandsspeicherung & Auto-Save (Crash-Sicherheit)</h2>
           <div class="manual-card">
             <p>
               Höchste Ausfallsicherheit am Zeitnehmertisch:
             </p>
             <ul style="padding-left: 1.5rem; line-height: 1.8;">
-              <li><strong>Laufende Speicherung:</strong> Der gesamte Spielstand (Restzeit, Tore, Strafen-Timer, Roster, Betreuer und Status) wird alle 5 Sekunden sowie bei jeder Aktion automatisch auf dem Gerät gesichert.</li>
+              <li><strong>Laufende Speicherung:</strong> Der gesamte Spielstand (Restzeit, Tore, Strafen-Timer, Shootout-State, Roster, Betreuer und Status) wird alle 5 Sekunden sowie bei jeder Aktion automatisch auf dem Gerät gesichert.</li>
               <li><strong>Wiederherstellung:</strong> Sollte die App geschlossen werden oder das Tablet neu starten, stellt Floorball Clock den exakten Spielzustand beim nächsten Start lückenlos wieder her.</li>
             </ul>
           </div>
         </article>
 
-        <!-- 12. FAQ -->
+        <!-- 13. FAQ -->
         <article class="manual-section" id="faq">
-          <h2>12. Häufige Fragen & Praxistipps</h2>
+          <h2>13. Häufige Fragen & Praxistipps</h2>
           <div class="manual-card">
-            <h4>Wie verhält sich die App, wenn zwei Strafen exakt zeitgleich enden?</h4>
+            <h4>Wie verhält sich die App beim Penaltyschießen?</h4>
+            <p>Die App führt das Schiedsgericht durch die 5 regulären Schützen pro Team. Fällt keine Entscheidung, startet automatisch das Sudden-Death-Verfahren. Alle Treffer werden synchron auf der Hallenanzeige und im Spielbericht eingetragen.</p>
+
+            <h4 style="margin-top: 1.5rem;">Wie verhält sich die App, wenn zwei Strafen exakt zeitgleich enden?</h4>
             <p>Gemäß IFF Regel 603.2 öffnet die App einen Schiedsgerichts-Dialog (<em>Entscheidung erforderlich: Welcher Spieler kehrt zurück?</em>), um dem Zeitnehmer die manuelle Entscheidung zu überlassen.</p>
 
             <h4 style="margin-top: 1.5rem;">Können Strafzeiten während des Spiels korrigiert werden?</h4>
@@ -438,7 +484,7 @@
             <p><strong>Ja!</strong> Floorball Clock ist vollständig in <strong>Deutsch und Englisch</strong> verfügbar und passt sich automatisch den Systemeinstellungen Ihres Geräts an.</p>
 
             <h4 style="margin-top: 1.5rem;">Funktioniert die App vollständig offline in der Sporthalle?</h4>
-            <p><strong>Ja!</strong> Zeitmessung, Strafen-Engine, Huptöne, Beamer-Ausgabe und PDF-Erstellung benötigen keinerlei Internetverbindung.</p>
+            <p><strong>Ja!</strong> Zeitmessung, Strafen-Engine, Penaltyschießen, Huptöne, Beamer-Ausgabe und PDF-Erstellung benötigen keinerlei Internetverbindung.</p>
           </div>
         </article>
 
@@ -463,6 +509,7 @@
           <ul class="footer-links">
             <li><a href="floorball-clock.html">App Details</a></li>
             <li><a href="handbuch.html">Benutzerhandbuch</a></li>
+            <li><a href="#shootout">Penaltyschießen</a></li>
             <li><a href="#strafen-arten">Strafarten</a></li>
             <li><a href="#display">Hallen-Scoreboard</a></li>
           </ul>
