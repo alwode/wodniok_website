@@ -366,6 +366,8 @@ p {
   vertical-align: middle;
   transition: transform 0.2s ease, opacity 0.2s ease;
   margin: 0.25rem 0;
+  background: #000000;
+  border-radius: 7px;
 }
 
 .app-store-badge-link:hover {
