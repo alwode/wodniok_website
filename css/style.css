@@ -358,6 +358,75 @@ p {
   font-size: 1.05rem;
 }
 
+/* App Store & Mac App Store Badges */
+.btn-appstore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 1.25rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-appstore:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.btn-appstore svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  fill: #ffffff;
+}
+
+.btn-appstore .appstore-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.btn-appstore .appstore-sub {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: -0.01em;
+}
+
+.btn-appstore .appstore-main {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.btn-appstore.btn-sm {
+  padding: 0.4rem 0.9rem;
+  gap: 0.5rem;
+}
+
+.btn-appstore.btn-sm svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-appstore.btn-sm .appstore-sub {
+  font-size: 0.6rem;
+}
+
+.btn-appstore.btn-sm .appstore-main {
+  font-size: 0.88rem;
+}
+
 /* Mobile Menu Toggle */
 .mobile-toggle {
   display: none;
