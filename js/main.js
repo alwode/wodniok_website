@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScoreboardDemo();
   initManualTOC();
   initPlatformTabs();
+  initLightbox();
 });
 
 /* Mobile Menu Toggle */
@@ -182,4 +183,81 @@ function initPlatformTabs() {
     });
   });
 }
+
+/* Lightbox / Fullscreen Image Zoom Viewer */
+function initLightbox() {
+  let lightbox = document.getElementById('lightbox-modal');
+  if (!lightbox) {
+    lightbox = document.createElement('div');
+    lightbox.id = 'lightbox-modal';
+    lightbox.className = 'lightbox-modal';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Vergrößerter Screenshot');
+    lightbox.innerHTML = `
+      <button class="lightbox-close-btn" aria-label="Schließen">&times;</button>
+      <div class="lightbox-container">
+        <img class="lightbox-img" src="" alt="Screenshot Vorschau">
+        <div class="lightbox-caption"></div>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+  }
+
+  const lightboxImg = lightbox.querySelector('.lightbox-img');
+  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+  const closeBtn = lightbox.querySelector('.lightbox-close-btn');
+
+  function openLightbox(src, alt, captionText) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || 'Vergrößerter Screenshot';
+    if (captionText && captionText.trim().length > 0) {
+      lightboxCaption.textContent = captionText.trim();
+      lightboxCaption.style.display = 'block';
+    } else {
+      lightboxCaption.textContent = '';
+      lightboxCaption.style.display = 'none';
+    }
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Click on any screenshot gallery item opens lightbox
+  document.addEventListener('click', (e) => {
+    // If inside an open lightbox, close it
+    if (e.target.closest('#lightbox-modal')) {
+      closeLightbox();
+      return;
+    }
+
+    const item = e.target.closest('.screenshot-gallery-item, .screenshot-img-box, .app-screenshot-hero');
+    if (item) {
+      const img = item.tagName.toLowerCase() === 'img' ? item : item.querySelector('img');
+      const caption = item.querySelector('.screenshot-caption');
+      if (img) {
+        openLightbox(img.src, img.alt, caption ? caption.textContent : img.alt);
+      }
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+}
+
 
