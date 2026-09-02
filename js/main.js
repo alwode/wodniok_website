@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScoreboardDemo();
   initManualTOC();
+  initPlatformTabs();
 });
 
 /* Mobile Menu Toggle */
@@ -148,3 +149,37 @@ function initManualTOC() {
 
   sections.forEach(section => observer.observe(section));
 }
+
+/* Platform Screenshots Tabs Switcher */
+function initPlatformTabs() {
+  const tabs = document.querySelectorAll('.platform-tab-btn');
+  const panels = document.querySelectorAll('.platform-screenshots-panel');
+
+  if (tabs.length === 0 || panels.length === 0) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetPlatform = tab.getAttribute('data-platform');
+
+      // Update active tab button
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Show matching panel
+      panels.forEach(panel => {
+        if (panel.getAttribute('id') === `platform-${targetPlatform}`) {
+          panel.classList.add('active');
+          panel.hidden = false;
+        } else {
+          panel.classList.remove('active');
+          panel.hidden = true;
+        }
+      });
+    });
+  });
+}
+

@@ -603,6 +603,99 @@ p {
   background: rgba(17, 24, 39, 0.9);
 }
 
+/* Platform Tabs Navigation */
+.platform-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 2rem;
+}
+
+.platform-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.platform-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.platform-tab-btn.active {
+  background: var(--gradient-brand);
+  color: #0b0f19;
+  border-color: transparent;
+  box-shadow: var(--shadow-glow-cyan);
+  font-weight: 700;
+}
+
+.platform-screenshots-panel {
+  display: none;
+  animation: fadeIn 0.35s ease forwards;
+}
+
+.platform-screenshots-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Linux / Windows Banner Box */
+.desktop-os-callout {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  margin-top: 3.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.desktop-os-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.desktop-os-content h3 {
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.desktop-os-content p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.desktop-os-action {
+  flex-shrink: 0;
+}
+
 /* Scoreboard Interactive Mockup Card (Demo on Index) */
 .scoreboard-preview {
   background: #060911;

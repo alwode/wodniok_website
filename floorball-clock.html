@@ -92,64 +92,260 @@
     </div>
   </section>
 
-  <!-- App Screenshots Gallery Section -->
-  <section class="section" style="padding-top: 2rem; padding-bottom: 4rem; background: rgba(17, 24, 39, 0.5); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <!-- App Screenshots Gallery Section with Platform Selector -->
+  <section class="section" style="padding-top: 2.5rem; padding-bottom: 4rem; background: rgba(17, 24, 39, 0.5); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
-      <div class="section-header" style="margin-bottom: 2rem;">
-        <div class="badge badge-orange">App Store & Feature Einblicke</div>
-        <h2>App-Screenshots auf iPhone, iPad & Hallen-Scoreboard</h2>
-        <p>Entwickelt für eine intuitive Bedienung am Schreibertisch mit schnellen Aktionen, präziser Zeitanpassung, Strafen-Korrektur, Penaltyschießen und regelkonformer Hallenanzeige.</p>
+      <div class="section-header" style="margin-bottom: 1.5rem;">
+        <div class="badge badge-orange">App Store & Multi-Plattform Einblicke</div>
+        <h2>Screenshots nach Plattform auswählen</h2>
+        <p>Wählen Sie Ihre gewünschte Plattform aus, um die optimierte Oberfläche für Smartphone, Tablet oder Desktop-Computer zu sehen.</p>
       </div>
 
-      <div class="screenshots-gallery-grid">
-        <!-- Item 1 -->
-        <div class="screenshot-gallery-item">
-          <div class="screenshot-img-box">
-            <img src="images/floorball-clock-screenshot-main.png?v=7" alt="Floorball Clock iPhone Hauptsteuerung & Spielsekretariat mit Zeitanpassung">
-          </div>
-          <div class="screenshot-caption">⏱️ Spielsekretariat & Feineinstellung (-5s..+5s)</div>
-        </div>
+      <!-- Platform Tabs -->
+      <div class="platform-tabs" role="tablist" aria-label="Plattform auswählen">
+        <button class="platform-tab-btn active" data-platform="ios" role="tab" aria-selected="true">
+          📱 iPhone (iOS)
+        </button>
+        <button class="platform-tab-btn" data-platform="ipad" role="tab" aria-selected="false">
+          📱 iPad (iPadOS)
+        </button>
+        <button class="platform-tab-btn" data-platform="mac" role="tab" aria-selected="false">
+          💻 Mac (macOS)
+        </button>
+        <button class="platform-tab-btn" data-platform="android-phone" role="tab" aria-selected="false">
+          🤖 Android Smartphone
+        </button>
+        <button class="platform-tab-btn" data-platform="android-tablet" role="tab" aria-selected="false">
+          📟 Android Tablet
+        </button>
+      </div>
 
-        <!-- Item 2: Penalty Shootout -->
-        <div class="screenshot-gallery-item">
-          <div class="screenshot-img-box">
-            <img src="images/floorball-clock-screenshot-shootout.png?v=7" alt="Floorball Clock Penaltyschießen Shootout Panel">
+      <!-- Panel 1: iOS / iPhone -->
+      <div id="platform-ios" class="platform-screenshots-panel active" role="tabpanel">
+        <div class="screenshots-gallery-grid">
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ios/01_control_panel.png?v=8" alt="Floorball Clock iPhone Hauptsteuerung & Spielsekretariat">
+            </div>
+            <div class="screenshot-caption">⏱️ Spielsekretariat & Feineinstellung (-5s..+5s)</div>
           </div>
-          <div class="screenshot-caption">🥅 Penaltyschießen (5 Schützen & Sudden Death)</div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="screenshot-gallery-item">
-          <div class="screenshot-img-box">
-            <img src="images/floorball-clock-screenshot-penalty.png?v=7" alt="Floorball Clock Strafen-Eingabedialog und Strafen-Korrektur">
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ios/02_penalty_shootout.png?v=8" alt="Floorball Clock iPhone Penaltyschießen Shootout">
+            </div>
+            <div class="screenshot-caption">🥅 Penaltyschießen (5 Schützen & Sudden Death)</div>
           </div>
-          <div class="screenshot-caption">⚖️ 2' / 2'+2' / 10' / MS Strafen & Korrektur</div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="screenshot-gallery-item">
-          <div class="screenshot-img-box">
-            <img src="images/floorball-clock-screenshot-setup.png?v=7" alt="Floorball Clock Spielregeln Großfeld 5v5 Kleinfeld 3v3 und Overtime">
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ios/03_penalty_dialog.png?v=8" alt="Floorball Clock iPhone Strafen-Dialog & Korrektur">
+            </div>
+            <div class="screenshot-caption">⚖️ 2' / 2'+2' / 10' / MS Strafen & Korrektur</div>
           </div>
-          <div class="screenshot-caption">⚙️ Großfeld (5v5) / Kleinfeld (3v3) & Team-Vorlagen</div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="screenshot-gallery-item">
-          <div class="screenshot-img-box">
-            <img src="images/floorball-clock-screenshot-report.png?v=7" alt="Floorball Clock Offizieller Floorball Deutschland Spielbericht mit PDF-Export">
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ios/04_roster_setup.png?v=8" alt="Floorball Clock iPhone Kader- & Team-Setup">
+            </div>
+            <div class="screenshot-caption">⚙️ Großfeld / Kleinfeld & Team-Vorlagen</div>
           </div>
-          <div class="screenshot-caption">📄 Interaktiver Spielbericht & PDF-Vorschau</div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="screenshot-gallery-item">
-          <div class="screenshot-img-box">
-            <img src="images/floorball-clock-screenshot-scoreboard.png?v=7" alt="Floorball Clock Scoreboard Beamer Hallenanzeige Regel 201.1">
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ios/05_match_report.png?v=8" alt="Floorball Clock iPhone Digitaler Spielbericht">
+            </div>
+            <div class="screenshot-caption">📄 Interaktiver Spielbericht & PDF-Vorschau</div>
           </div>
-          <div class="screenshot-caption">🖥️ Hallen-Scoreboard (Aufsteigend gem. Regel 201.1)</div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ios/06_scoreboard.png?v=8" alt="Floorball Clock iPhone Hallenanzeige Scoreboard">
+            </div>
+            <div class="screenshot-caption">🖥️ Hallen-Scoreboard (Aufsteigend gem. Regel 201.1)</div>
+          </div>
         </div>
       </div>
+
+      <!-- Panel 2: iPad -->
+      <div id="platform-ipad" class="platform-screenshots-panel" role="tabpanel" hidden>
+        <div class="screenshots-gallery-grid">
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ipad/01_control_panel.png?v=8" alt="Floorball Clock iPad Hauptsteuerung am Kampfgericht">
+            </div>
+            <div class="screenshot-caption">⏱️ Großes iPad-Bedienfeld am Kampfgericht</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ipad/02_penalty_shootout.png?v=8" alt="Floorball Clock iPad Penaltyschießen">
+            </div>
+            <div class="screenshot-caption">🥅 Penaltyschießen & Shootout-Steuerung</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ipad/03_penalty_dialog.png?v=8" alt="Floorball Clock iPad Strafen-Eingabe">
+            </div>
+            <div class="screenshot-caption">⚖️ 2' / 2'+2' / 10' / MS Strafen & Korrektur</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ipad/04_roster_setup.png?v=8" alt="Floorball Clock iPad Kader & Betreuer">
+            </div>
+            <div class="screenshot-caption">⚙️ Team-Kader, Betreuer (Staff) & Logos</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ipad/05_match_report.png?v=8" alt="Floorball Clock iPad Offizieller Spielberichtsbogen">
+            </div>
+            <div class="screenshot-caption">📄 Floorball Deutschland PDF-Spielbericht</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/ipad/06_scoreboard.png?v=8" alt="Floorball Clock iPad Scoreboard Hallenausgabe">
+            </div>
+            <div class="screenshot-caption">🖥️ Scoreboard-Beamer-Ausgabe (Regel 201.1)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Mac (macOS) -->
+      <div id="platform-mac" class="platform-screenshots-panel" role="tabpanel" hidden>
+        <div class="screenshots-gallery-grid">
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/mac/01_control_panel.png?v=8" alt="Floorball Clock Mac Desktop Hauptsteuerung">
+            </div>
+            <div class="screenshot-caption">⏱️ Desktop-Steuerung für Schreibertisch-Mac</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/mac/02_penalty_shootout.png?v=8" alt="Floorball Clock Mac Penaltyschießen">
+            </div>
+            <div class="screenshot-caption">🥅 Penaltyschießen & Sudden Death</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/mac/03_penalty_dialog.png?v=8" alt="Floorball Clock Mac Strafen">
+            </div>
+            <div class="screenshot-caption">⚖️ 2' / 2'+2' / 10' / MS Strafen-Engine</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/mac/04_roster_setup.png?v=8" alt="Floorball Clock Mac Setup">
+            </div>
+            <div class="screenshot-caption">⚙️ Kaderverwaltung & Vereinsvorlagen</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/mac/05_match_report.png?v=8" alt="Floorball Clock Mac PDF Spielbericht">
+            </div>
+            <div class="screenshot-caption">📄 Interaktiver Spielbericht & PDF-Druck</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/mac/06_scoreboard.png?v=8" alt="Floorball Clock Mac Multi-Display Scoreboard">
+            </div>
+            <div class="screenshot-caption">🖥️ Separates 2. Monitor- / Beamer-Fenster</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Android Smartphone -->
+      <div id="platform-android-phone" class="platform-screenshots-panel" role="tabpanel" hidden>
+        <div class="screenshots-gallery-grid">
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_phone/01_control_panel.png?v=8" alt="Floorball Clock Android Smartphone Hauptansicht">
+            </div>
+            <div class="screenshot-caption">⏱️ Android Smartphone Steuerung & Zeitanpassung</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_phone/02_penalty_shootout.png?v=8" alt="Floorball Clock Android Penaltyschießen">
+            </div>
+            <div class="screenshot-caption">🥅 Penaltyschießen (Shootout-Erfassung)</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_phone/03_penalty_dialog.png?v=8" alt="Floorball Clock Android Strafen">
+            </div>
+            <div class="screenshot-caption">⚖️ 2' / 2'+2' / 10' / MS Strafen & Korrektur</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_phone/04_roster_setup.png?v=8" alt="Floorball Clock Android Roster">
+            </div>
+            <div class="screenshot-caption">⚙️ Spielformate, Kader & Team-Vorlagen</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_phone/05_match_report.png?v=8" alt="Floorball Clock Android Spielbericht">
+            </div>
+            <div class="screenshot-caption">📄 Digitaler Spielberichtsbogen (PDF)</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_phone/06_scoreboard.png?v=8" alt="Floorball Clock Android Cast Scoreboard">
+            </div>
+            <div class="screenshot-caption">🖥️ Hallen-Scoreboard (Aufsteigend gem. Regel 201.1)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 5: Android Tablet -->
+      <div id="platform-android-tablet" class="platform-screenshots-panel" role="tabpanel" hidden>
+        <div class="screenshots-gallery-grid">
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_tablet/01_control_panel.png?v=8" alt="Floorball Clock Android Tablet Hauptsteuerung">
+            </div>
+            <div class="screenshot-caption">⏱️ Android Tablet Schreibertisch-Ansicht</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_tablet/02_penalty_shootout.png?v=8" alt="Floorball Clock Android Tablet Penaltyschießen">
+            </div>
+            <div class="screenshot-caption">🥅 Penaltyschießen & Shootout-Engine</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_tablet/03_penalty_dialog.png?v=8" alt="Floorball Clock Android Tablet Strafen">
+            </div>
+            <div class="screenshot-caption">⚖️ 2' / 2'+2' / 10' / MS Strafen & Korrektur</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_tablet/04_roster_setup.png?v=8" alt="Floorball Clock Android Tablet Setup">
+            </div>
+            <div class="screenshot-caption">⚙️ Kader, Betreuer-Erfassung & Logos</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_tablet/05_match_report.png?v=8" alt="Floorball Clock Android Tablet Spielbericht">
+            </div>
+            <div class="screenshot-caption">📄 Interaktiver Spielbericht & PDF-Vorschau</div>
+          </div>
+          <div class="screenshot-gallery-item">
+            <div class="screenshot-img-box">
+              <img src="images/screenshots/android_tablet/06_scoreboard.png?v=8" alt="Floorball Clock Android Tablet Scoreboard">
+            </div>
+            <div class="screenshot-caption">🖥️ Hallen-Scoreboard (Aufsteigend gem. Regel 201.1)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linux & Windows Callout Banner -->
+      <div class="desktop-os-callout">
+        <div class="desktop-os-content">
+          <h3>
+            <span>🐧 Linux &amp; 🪟 Windows Versionen verfügbar</span>
+          </h3>
+          <p>
+            Floorball Clock steht neben <strong>iOS (iPhone/iPad), macOS und Android</strong> auch als vollwertige Desktop-Anwendung für <strong>Linux</strong> (Debian/Ubuntu <code>.deb</code> &amp; Binaries) sowie <strong>Windows (64-Bit)</strong> bereit. 
+            Möchten Sie Floorball Clock auf Ihrem Linux- oder Windows-Laptop am Kampfgericht nutzen? Nehmen Sie bitte direkt Kontakt mit dem Entwickler auf, um die passende Version anzufragen und bereitgestellt zu bekommen.
+          </p>
+        </div>
+        <div class="desktop-os-action">
+          <a href="kontakt.html" class="btn btn-primary btn-lg">✉️ Version anfragen</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
