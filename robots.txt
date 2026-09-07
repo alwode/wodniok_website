@@ -1,4 +1,7 @@
 User-agent: *
+Disallow: /desktop-portal.html
+Disallow: /download-portal.html
 Allow: /
 
 Sitemap: https://alwode.github.io/wodniok_website/sitemap.xml
+

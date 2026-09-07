@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <title>Floorball Clock – Desktop Download Portal</title>
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <style>
+    .portal-wrapper {
+      min-height: calc(100vh - 200px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .portal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      max-width: 540px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), var(--shadow-glow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portal-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-brand);
+    }
+
+    .lock-icon-box {
+      width: 64px;
+      height: 64px;
+      background: rgba(0, 210, 255, 0.1);
+      border: 1px solid rgba(0, 210, 255, 0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: var(--accent-cyan);
+      font-size: 1.75rem;
+    }
+
+    .code-input-group {
+      display: flex;
+      gap: 0.5rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .code-input {
+      flex: 1;
+      background: rgba(6, 9, 17, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .code-input:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+      background: rgba(11, 15, 25, 0.95);
+    }
+
+    .error-feedback {
+      color: var(--accent-red);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 0.75rem;
+      display: none;
+      animation: shake 0.3s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+
+    /* Dashboard State */
+    .dashboard-view {
+      display: none;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .download-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .download-box:hover {
+      border-color: var(--border-active);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .download-box.featured {
+      border-color: rgba(0, 210, 255, 0.4);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), var(--shadow-glow-cyan);
+    }
+
+    .os-badge-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .os-icon {
+      font-size: 2.25rem;
+    }
+
+    .terminal-cmd {
+      background: #060911;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: var(--text-secondary);
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo">
+        <div class="logo-icon">AW</div>
+        <span>Alex Wodniok</span>
+      </a>
+      <div style="font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;">
+        <span>🔒 Geschützter Download-Bereich</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="portal-wrapper">
+
+    <!-- 1. Lock Screen (Initial State) -->
+    <div id="lock-screen" class="portal-card">
+      <div class="lock-icon-box">🔒</div>
+      <h2>Floorball <span class="text-gradient">Clock</span></h2>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
+        Desktop-Bereitstellung für Linux & Windows
+      </p>
+
+      <p style="font-size: 0.95rem; margin-top: 1.5rem; color: var(--text-muted); line-height: 1.5;">
+        Bitte geben Sie Ihren persönlichen Freigabecode ein, um die Desktop-Installationspakete freizuschalten.
+      </p>
+
+      <form id="code-form" onsubmit="handleUnlock(event)">
+        <div class="code-input-group">
+          <input 
+            type="text" 
+            id="access-code" 
+            class="code-input" 
+            placeholder="CODE EINGEBEN" 
+            autocomplete="off" 
+            spellcheck="false" 
+            autofocus 
+            required
+          >
+          <button type="submit" class="btn btn-primary" style="padding: 0.85rem 1.5rem;">
+            Entsperren →
+          </button>
+        </div>
+      </form>
+
+      <div id="error-msg" class="error-feedback">
+        ❌ Ungültiger Freigabecode. Bitte prüfen Sie die Eingabe.
+      </div>
+
+      <div style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted);">
+        Haben Sie noch keinen Code erhalten? <a href="kontakt.html" style="color: var(--accent-cyan);">Entwickler kontaktieren</a>
+      </div>
+    </div>
+
+    <!-- 2. Unlocked Dashboard (Shown upon successful AES decryption) -->
+    <div id="dashboard" class="dashboard-view">
+      <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+        <div class="badge badge-green">✓ Freigabecode verifiziert</div>
+        <h1>Floorball Clock <span class="text-gradient">Desktop Pakete</span></h1>
+        <p id="release-info" style="color: var(--text-secondary); max-width: 650px; margin: 0.5rem auto 0;">
+          Offizielle Desktop-Version für Zeitnehmer und Kampfgerichte.
+        </p>
+      </div>
+
+      <div class="dashboard-grid">
+
+        <!-- Card: Linux (.deb) -->
+        <div class="download-box featured">
+          <div>
+            <div class="os-badge-header">
+              <div class="os-icon">🐧</div>
+              <div>
+                <span class="badge badge-orange" style="margin-bottom: 0.25rem;">Linux 64-Bit</span>
+                <h3 style="font-size: 1.35rem; margin: 0; color: #fff;">Debian / Ubuntu Paket</h3>
+              </div>
+            </div>
+
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+              Nativ kompiliertes Debian-Installationspaket (<code>.deb</code>) für alle Linux-Distributionen wie Ubuntu, Debian, Linux Mint und Pop!_OS.
+            </p>
+
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+              <strong>Installation im Terminal:</strong>
+            </div>
+            <div class="terminal-cmd">
+              <span>sudo dpkg -i floorball_clock.deb</span>
+              <button class="copy-btn" onclick="copyTerminalCmd('sudo dpkg -i floorball_clock.deb', this)">Kopieren</button>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 1.5rem;">
+              <em>Tipp:</em> Falls Abhängigkeiten fehlen, einfach danach <code>sudo apt install -f</code> ausführen.
+            </p>
+          </div>
+
+          <div>
+            <a id="linux-download-btn" href="#" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center; margin-bottom: 0.75rem;">
+              ⬇️ Linux .deb herunterladen
+            </a>
+            <a id="linux-drive-link" href="#" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%; justify-content: center;">
+              📁 In Google Drive ansehen
+            </a>
+          </div>
+        </div>
+
+        <!-- Card: Windows (.exe) -->
+        <div class="download-box">
+          <div>
+            <div class="os-badge-header">
+              <div class="os-icon">🪟</div>
+              <div>
+                <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; border-color: rgba(99, 102, 241, 0.3); margin-bottom: 0.25rem;">Windows 64-Bit</span>
+                <h3 style="font-size: 1.35rem; margin: 0; color: #fff;">Windows Desktop</h3>
+              </div>
+            </div>
+
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+              Kompatibel mit Windows 10 & Windows 11 (64-Bit). Ideal für Vereinslaptops am Schreibertisch mit HDMI- oder Beamer-Anbindung.
+            </p>
+
+            <div class="callout callout-info" style="font-size: 0.9rem; padding: 1rem; margin-bottom: 1.5rem;">
+              <strong>ℹ️ Windows-Bereitstellung:</strong><br>
+              Für die Bereitstellung des Windows-Installationspakets wenden Sie sich bitte kurz per E-Mail an den Entwickler.
+            </div>
+          </div>
+
+          <div>
+            <a href="kontakt.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+              ✉️ Windows-Paket anfragen
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Actions / Support -->
+      <div style="margin-top: 3rem; text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="handbuch.html" class="btn btn-secondary btn-sm">📖 Benutzerhandbuch öffnen</a>
+        <a href="floorball-clock.html" class="btn btn-secondary btn-sm">📱 App-Übersicht & Store-Links</a>
+        <a href="kontakt.html" class="btn btn-secondary btn-sm">💬 Entwickler kontaktieren</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container" style="text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+      © 2026 Alexander Wodniok • Geschützter Downloadbereich für Floorball Clock
+    </div>
+  </footer>
+
+  <!-- WebCrypto AES-GCM Decryption Script -->
+  <script>
+    // AES-GCM Encrypted Payload (Generated with PBKDF2 100k iterations, SHA-256)
+    // No plaintext URL or secrets are visible in this code or in GitHub.
+    const ENCRYPTED_PAYLOAD = {
+      "salt": "X8N9xAvyuMN9M/NK6yQgJQ==",
+      "iv": "nnxOeEOUT4pxsnhk",
+      "data": "NP/TuQiWiLkzwnuvtoU9WRWwQ6bmIn2obwxFFkPvEYlF/NlBZhYmaqdtx/FTRNv4cqDOhxVUhBxeNc/SnAbMR9/j2duFPWDtayZ3YzUt6mte1rDaKQjRcX1+XgZNIN1E1FI8CiUjY8qfysTDs/RSPodAmsmz1DdcWW+KtpARTYrEP6YPfSXruH8kpKhDMXm4nmzhlCq1N5aqQ6zYp0cDm72/pNXUtU+T6nqYuXlYYVuZTYIPX66157iUaGzVS0dsi+oPFCz4NmvwxWTi+R78cOr7nsDLn8qOKWuZQ+B+Tht0+b58zAETbTP/dHXGweUP8xzltyau95pp8f6rnwsVAtoTHdjJln4Yn8bJ+J4="
+    };
+
+    async function decryptPayload(password, payload) {
+      const enc = new TextEncoder();
+      const salt = Uint8Array.from(atob(payload.salt), c => c.charCodeAt(0));
+      const iv = Uint8Array.from(atob(payload.iv), c => c.charCodeAt(0));
+      const data = Uint8Array.from(atob(payload.data), c => c.charCodeAt(0));
+
+      const keyMaterial = await window.crypto.subtle.importKey(
+        "raw",
+        enc.encode(password.trim()),
+        { name: "PBKDF2" },
+        false,
+        ["deriveKey"]
+      );
+
+      const key = await window.crypto.subtle.deriveKey(
+        {
+          name: "PBKDF2",
+          salt: salt,
+          iterations: 100000,
+          hash: "SHA-256"
+        },
+        keyMaterial,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+
+      const decrypted = await window.crypto.subtle.decrypt(
+        { name: "AES-GCM", iv: iv },
+        key,
+        data
+      );
+
+      const dec = new TextDecoder();
+      return JSON.parse(dec.decode(decrypted));
+    }
+
+    async function handleUnlock(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById("access-code");
+      const errorMsg = document.getElementById("error-msg");
+      const enteredCode = input.value;
+
+      try {
+        errorMsg.style.display = "none";
+        const decryptedData = await decryptPayload(enteredCode, ENCRYPTED_PAYLOAD);
+
+        // Unlock successful: Configure download buttons & show dashboard
+        document.getElementById("linux-download-btn").href = decryptedData.linux_direct || decryptedData.linux_url;
+        document.getElementById("linux-drive-link").href = decryptedData.linux_url;
+        document.getElementById("release-info").textContent = `Offizielles Desktop-Release Version ${decryptedData.version} (${decryptedData.release_date}) für Zeitnehmer und Kampfgerichte.`;
+
+        document.getElementById("lock-screen").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } catch (err) {
+        // Decryption failed (wrong code)
+        errorMsg.style.display = "block";
+        input.select();
+      }
+    }
+
+    function copyTerminalCmd(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.textContent;
+        btn.textContent = "Kopiert! ✓";
+        btn.style.color = "#10b981";
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.color = "";
+        }, 2000);
+      });
+    }
+
+    // Check for URL Parameter ?code=... for automatic 1-click unlock
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const codeFromUrl = urlParams.get("code");
+      if (codeFromUrl) {
+        const input = document.getElementById("access-code");
+        input.value = codeFromUrl;
+        handleUnlock();
+      }
+    });
+  </script>
+</body>
+</html>
