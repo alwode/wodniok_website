@@ -98,14 +98,14 @@
     /* Dashboard State */
     .dashboard-view {
       display: none;
-      max-width: 900px;
+      max-width: 960px;
       width: 100%;
       margin: 0 auto;
     }
 
     .dashboard-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
@@ -114,7 +114,7 @@
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 2rem;
+      padding: 2.25rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -137,12 +137,12 @@
     .os-badge-header {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
     }
 
     .os-icon {
-      font-size: 2.25rem;
+      font-size: 2.4rem;
     }
 
     .terminal-cmd {
@@ -245,19 +245,19 @@
 
       <div class="dashboard-grid">
 
-        <!-- Card: Linux (.deb) -->
+        <!-- Card 1: Linux (.deb) -->
         <div class="download-box featured">
           <div>
             <div class="os-badge-header">
               <div class="os-icon">🐧</div>
               <div>
                 <span class="badge badge-orange" style="margin-bottom: 0.25rem;">Linux 64-Bit</span>
-                <h3 style="font-size: 1.35rem; margin: 0; color: #fff;">Debian / Ubuntu Paket</h3>
+                <h3 style="font-size: 1.35rem; margin: 0; color: #fff;">Debian / Ubuntu (.deb)</h3>
               </div>
             </div>
 
             <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-              Nativ kompiliertes Debian-Installationspaket (<code>.deb</code>) für alle Linux-Distributionen wie Ubuntu, Debian, Linux Mint und Pop!_OS.
+              Nativ kompiliertes Debian-Installationspaket für alle Linux-Distributionen (Ubuntu, Debian, Linux Mint, Pop!_OS etc.).
             </p>
 
             <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
@@ -268,7 +268,7 @@
               <button class="copy-btn" onclick="copyTerminalCmd('sudo dpkg -i floorball_clock.deb', this)">Kopieren</button>
             </div>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 1.5rem;">
-              <em>Tipp:</em> Falls Abhängigkeiten fehlen, einfach danach <code>sudo apt install -f</code> ausführen.
+              <em>Tipp:</em> Falls Abhängigkeiten fehlen, einfach <code>sudo apt install -f</code> ausführen.
             </p>
           </div>
 
@@ -282,30 +282,33 @@
           </div>
         </div>
 
-        <!-- Card: Windows (.exe) -->
-        <div class="download-box">
+        <!-- Card 2: Windows (.exe) -->
+        <div class="download-box featured">
           <div>
             <div class="os-badge-header">
               <div class="os-icon">🪟</div>
               <div>
                 <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; border-color: rgba(99, 102, 241, 0.3); margin-bottom: 0.25rem;">Windows 64-Bit</span>
-                <h3 style="font-size: 1.35rem; margin: 0; color: #fff;">Windows Desktop</h3>
+                <h3 style="font-size: 1.35rem; margin: 0; color: #fff;">Windows Desktop (.exe)</h3>
               </div>
             </div>
 
             <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-              Kompatibel mit Windows 10 & Windows 11 (64-Bit). Ideal für Vereinslaptops am Schreibertisch mit HDMI- oder Beamer-Anbindung.
+              Nativ für Windows 10 &amp; Windows 11 (64-Bit). Ideal für Vereinslaptops am Schreibertisch mit Beamer- oder HDMI-Scoreboard.
             </p>
 
-            <div class="callout callout-info" style="font-size: 0.9rem; padding: 1rem; margin-bottom: 1.5rem;">
-              <strong>ℹ️ Windows-Bereitstellung:</strong><br>
-              Für die Bereitstellung des Windows-Installationspakets wenden Sie sich bitte kurz per E-Mail an den Entwickler.
+            <div class="callout callout-info" style="font-size: 0.85rem; padding: 0.85rem 1rem; margin-bottom: 1.5rem; line-height: 1.5;">
+              <strong>💡 Hinweis bei Erstinstallation:</strong><br>
+              Falls Windows SmartScreen <em>„Der Computer wurde geschützt“</em> anzeigt, klicken Sie einfach auf <strong>„Weitere Informationen“</strong> und dann <strong>„Trotzdem ausführen“</strong>.
             </div>
           </div>
 
           <div>
-            <a href="kontakt.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">
-              ✉️ Windows-Paket anfragen
+            <a id="windows-download-btn" href="#" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center; margin-bottom: 0.75rem;">
+              ⬇️ Windows .exe herunterladen
+            </a>
+            <a id="windows-drive-link" href="#" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%; justify-content: center;">
+              📁 In Google Drive ansehen
             </a>
           </div>
         </div>
@@ -332,11 +335,11 @@
   <!-- WebCrypto AES-GCM Decryption Script -->
   <script>
     // AES-GCM Encrypted Payload (Generated with PBKDF2 100k iterations, SHA-256)
-    // No plaintext URL or secrets are visible in this code or in GitHub.
+    // Both Linux and Windows direct download links are encrypted and unreadable on GitHub.
     const ENCRYPTED_PAYLOAD = {
-      "salt": "X8N9xAvyuMN9M/NK6yQgJQ==",
-      "iv": "nnxOeEOUT4pxsnhk",
-      "data": "NP/TuQiWiLkzwnuvtoU9WRWwQ6bmIn2obwxFFkPvEYlF/NlBZhYmaqdtx/FTRNv4cqDOhxVUhBxeNc/SnAbMR9/j2duFPWDtayZ3YzUt6mte1rDaKQjRcX1+XgZNIN1E1FI8CiUjY8qfysTDs/RSPodAmsmz1DdcWW+KtpARTYrEP6YPfSXruH8kpKhDMXm4nmzhlCq1N5aqQ6zYp0cDm72/pNXUtU+T6nqYuXlYYVuZTYIPX66157iUaGzVS0dsi+oPFCz4NmvwxWTi+R78cOr7nsDLn8qOKWuZQ+B+Tht0+b58zAETbTP/dHXGweUP8xzltyau95pp8f6rnwsVAtoTHdjJln4Yn8bJ+J4="
+      "salt": "C+1hRBzNUkTIO5m4l/bbVQ==",
+      "iv": "xvEIsn5OUWLp8w3O",
+      "data": "4NkPs5MGAK2F7H8RuHSX3+bbH4H1ZEs3aT0BN6MFKa7x6WlOCxtTFqdM9BHA4ogKPyd7M/SeE/yRHJQyA4ewjOyPy/qDApm4pNcMlGeilMM2od7Khl9CBG+SdUpH3HvOb6Sh9NREtcdI7fxOk2a/zIycqr+mdcPkf/s61Yt2x2ZIvPwuSnuGV4NlGns5GuKwFkdJN45YdTELfuHp3JvJ7XYN9Dy/xH+iu47KZ1ONt/1i8S/CAmyp3VNton6ZZkLr7oQ2kKOqu+G1ytRKMatJc5zsLQnNxd2oYtJtSVMEGTXr41zBaFPkCPTmvyqvPwgAGxA8Q8IwOcmEXWT0dXebeW00UPoJ+ezQERPPohP1fdLaiACnGWYE5LBT+gQ9E6OW8dG7DB2fEKrcHSdXrkPl4Z3LJH0gCoiVqNsZZtoKGwxJAYZyjwEH59sN/Tuh/tRn0lvANMWC41MQMNwjjMl/A8MfS92FSV2Ozbj4ijXUKQK5oiaUmxFUKX6RiWnbasqHsyMdlBCtFwkvfZ9AOAML3B+97s3ESrr0D6QtMsZcfXEacD9vIqHEKLAjJyx3IlSIRrXNo++RqAcqukXaXmB0ahTf6g6AHdb6kEBt+lM3HHkEY0uHhIHW/g=="
     };
 
     async function decryptPayload(password, payload) {
@@ -386,9 +389,14 @@
         errorMsg.style.display = "none";
         const decryptedData = await decryptPayload(enteredCode, ENCRYPTED_PAYLOAD);
 
-        // Unlock successful: Configure download buttons & show dashboard
+        // Linux Links
         document.getElementById("linux-download-btn").href = decryptedData.linux_direct || decryptedData.linux_url;
         document.getElementById("linux-drive-link").href = decryptedData.linux_url;
+
+        // Windows Links
+        document.getElementById("windows-download-btn").href = decryptedData.windows_direct || decryptedData.windows_url;
+        document.getElementById("windows-drive-link").href = decryptedData.windows_url;
+
         document.getElementById("release-info").textContent = `Offizielles Desktop-Release Version ${decryptedData.version} (${decryptedData.release_date}) für Zeitnehmer und Kampfgerichte.`;
 
         document.getElementById("lock-screen").style.display = "none";
