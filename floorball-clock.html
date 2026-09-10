@@ -64,6 +64,7 @@
           <a href="https://apps.apple.com/app/floorball-clock-scoreboard/id6756548192" target="_blank" rel="noopener" class="app-store-badge-link" aria-label="Floorball Clock im App Store für iPhone, iPad und Mac laden">
             <img src="images/app-store-badge-universal-de.svg" alt="Laden im App Store" class="app-store-badge-img" height="48" width="144">
           </a>
+          <a href="#live-demo" class="btn btn-orange btn-lg">🎮 Live-Demo testen</a>
           <a href="handbuch.html" class="btn btn-primary btn-lg">📖 Handbuch öffnen</a>
         </div>
 
@@ -89,6 +90,81 @@
           <img src="images/floorball-clock-screenshot-main.png?v=9" alt="Floorball Clock iPhone Screenshot Hauptsteuerung mit Zeitanpassung" class="app-screenshot-hero" style="border-color: rgba(99, 102, 241, 0.4); box-shadow: var(--shadow-glow); max-width: 290px;">
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Interactive Live Web Demo Section -->
+  <section id="live-demo" class="section" style="padding-top: 3.5rem; padding-bottom: 4rem; background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(11, 15, 25, 0.95) 100%); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header" style="text-align: center; max-width: 840px; margin: 0 auto 2.5rem;">
+        <div class="badge badge-orange" style="margin-bottom: 0.75rem;">🎮 Interaktive Web-Demo</div>
+        <h2>Floorball Clock direkt im Browser ausprobieren</h2>
+        <p>
+          Erleben Sie das digitale Spielsekretariat live in Aktion. Das Test-Spiel ist bereits mit realistischen Matchdaten (2. Drittel, 3:2 Spielstand, Restzeit 14:25, 1 aktive 2'-Strafe) vorbelegt – Sie können die Uhr sofort starten, Spielstände anpassen, Strafen verwalten oder den Spielbericht öffnen.
+        </p>
+      </div>
+
+      <!-- Demo Window Mockup Frame -->
+      <div class="demo-window-frame">
+        <div class="demo-window-header">
+          <div class="demo-window-controls">
+            <span class="demo-window-dot close"></span>
+            <span class="demo-window-dot minimize"></span>
+            <span class="demo-window-dot maximize"></span>
+          </div>
+          <div class="demo-window-title">
+            <span>⏱️</span> Floorball Clock – Digitales Spielsekretariat (Live-Demo)
+          </div>
+          <div class="demo-window-actions">
+            <a href="floorball-clock-demo/index.html" target="_blank" rel="noopener" class="demo-window-btn" title="In neuem Tab / Vollbild öffnen">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span>Vollbild</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="demo-iframe-wrapper">
+          <iframe 
+            src="floorball-clock-demo/index.html" 
+            title="Floorball Clock Interaktive Live-Demo"
+            allow="autoplay"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Demo Feature Hints -->
+      <div class="demo-features-hint-grid">
+        <div class="demo-hint-card">
+          <div class="demo-hint-icon">⏱️</div>
+          <div class="demo-hint-text">
+            <h4>Spielzeit &amp; Feineinstellung</h4>
+            <p>Starten/stoppen Sie die Spielzeituhr oder korrigieren Sie Sekunden über die <code>-5s</code>..<code>+5s</code> Schnelltasten.</p>
+          </div>
+        </div>
+        <div class="demo-hint-card">
+          <div class="demo-hint-icon">⚖️</div>
+          <div class="demo-hint-text">
+            <h4>2' / 2'+2' / 10' Strafen-Logik</h4>
+            <p>Testen Sie die automatische Strafzeiten-Abarbeitung und die direkte Bearbeitung laufender Strafen.</p>
+          </div>
+        </div>
+        <div class="demo-hint-card">
+          <div class="demo-hint-icon">📋</div>
+          <div class="demo-hint-text">
+            <h4>Digitaler Spielberichtsbogen</h4>
+            <p>Tippen Sie oben auf das Notizblock-Symbol, um das vollständige Protokoll mit Toren und Events einzusehen.</p>
+          </div>
+        </div>
+        <div class="demo-hint-card">
+          <div class="demo-hint-icon">👥</div>
+          <div class="demo-hint-text">
+            <h4>Kader &amp; Betreuer (Staff)</h4>
+            <p>Über das Personen-Icon oben rechts können Sie Spielerlisten und bis zu 5 Betreuer pro Team ansehen.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
