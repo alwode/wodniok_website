@@ -947,6 +947,21 @@ p {
   color: var(--accent-cyan);
 }
 
+.phone-demo-note {
+  width: 362px;
+  max-width: 100%;
+  margin-top: 0.65rem;
+  padding: 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  text-align: center;
+}
+
+.phone-demo-note strong {
+  color: #cbd5e1;
+}
+
 @media (max-width: 768px) {
   .phone-frame {
     width: 340px;
