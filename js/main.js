@@ -4,7 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
-  initScoreboardDemo();
   initManualTOC();
   initPlatformTabs();
   initLightbox();
@@ -27,95 +26,6 @@ function initMobileMenu() {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
       });
-    });
-  }
-}
-
-/* Interactive Scoreboard Demo for Hero / Showcase */
-function initScoreboardDemo() {
-  const timeElem = document.getElementById('demo-timer');
-  const homeScoreElem = document.getElementById('home-score');
-  const guestScoreElem = document.getElementById('guest-score');
-  const toggleTimerBtn = document.getElementById('btn-toggle-timer');
-  const addHomeGoalBtn = document.getElementById('btn-home-plus');
-  const addGuestGoalBtn = document.getElementById('btn-guest-plus');
-  const resetDemoBtn = document.getElementById('btn-reset-demo');
-
-  if (!timeElem) return;
-
-  let totalSeconds = 20 * 60; // 20:00
-  let isRunning = false;
-  let timerInterval = null;
-  let homeGoals = 3;
-  let guestGoals = 2;
-
-  function updateTimerDisplay() {
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = totalSeconds % 60;
-    timeElem.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-  }
-
-  function startTimer() {
-    if (isRunning) return;
-    isRunning = true;
-    if (toggleTimerBtn) {
-      toggleTimerBtn.textContent = 'Pause';
-      toggleTimerBtn.classList.add('btn-orange');
-      toggleTimerBtn.classList.remove('btn-primary');
-    }
-    timerInterval = setInterval(() => {
-      if (totalSeconds > 0) {
-        totalSeconds--;
-        updateTimerDisplay();
-      } else {
-        pauseTimer();
-      }
-    }, 1000);
-  }
-
-  function pauseTimer() {
-    isRunning = false;
-    clearInterval(timerInterval);
-    if (toggleTimerBtn) {
-      toggleTimerBtn.textContent = 'Start';
-      toggleTimerBtn.classList.add('btn-primary');
-      toggleTimerBtn.classList.remove('btn-orange');
-    }
-  }
-
-  if (toggleTimerBtn) {
-    toggleTimerBtn.addEventListener('click', () => {
-      if (isRunning) {
-        pauseTimer();
-      } else {
-        startTimer();
-      }
-    });
-  }
-
-  if (addHomeGoalBtn && homeScoreElem) {
-    addHomeGoalBtn.addEventListener('click', () => {
-      homeGoals++;
-      homeScoreElem.textContent = homeGoals;
-    });
-  }
-
-  if (addGuestGoalBtn && guestScoreElem) {
-    addGuestGoalBtn.addEventListener('click', () => {
-      guestGoals++;
-      guestScoreElem.textContent = guestGoals;
-    });
-  }
-
-  if (resetDemoBtn) {
-    resetDemoBtn.addEventListener('click', () => {
-      pauseTimer();
-      totalSeconds = 20 * 60;
-      homeGoals = 0;
-      guestGoals = 0;
-      updateTimerDisplay();
-      if (homeScoreElem) homeScoreElem.textContent = '0';
-      if (guestScoreElem) guestScoreElem.textContent = '0';
     });
   }
 }

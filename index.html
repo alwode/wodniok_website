@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://alwode.github.io/wodniok_website/">
   <meta property="og:type" content="website">
   <title>Alexander Wodniok | Software & Mobile Apps – Floorball & Lifestyle</title>
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
 
@@ -83,49 +83,42 @@
         </div>
       </div>
 
-      <!-- Interactive Scoreboard Card -->
+      <!-- Interactive Smartphone Live Demo -->
       <div class="hero-visual">
-        <div class="scoreboard-preview">
-          <div class="sb-header">
-            <span class="sb-period">3. Drittel (5 gegen 4)</span>
-            <div class="sb-status">
-              <span class="sb-status-dot"></span>
-              <span>LIVE SCOREBOARD DEMO</span>
+        <div class="phone-mockup-wrapper">
+          <div class="phone-frame">
+            <!-- Top Hardware Bar (Front Camera & Speaker in Bezel) -->
+            <div class="phone-top-bar">
+              <span class="phone-camera-lens"></span>
+              <span class="phone-speaker-slit"></span>
+            </div>
+            
+            <!-- Interactive Touch Screen with Live Demo -->
+            <div class="phone-screen">
+              <iframe 
+                src="floorball-clock-demo/index.html" 
+                title="Floorball Clock Interaktive Live-Demo (Smartphone)"
+                allow="autoplay"
+                loading="eager">
+              </iframe>
+            </div>
+
+            <!-- Home Bar Indicator -->
+            <div class="phone-bottom-bar">
+              <span class="phone-home-indicator"></span>
             </div>
           </div>
 
-          <div class="sb-timer-container">
-            <div class="sb-time" id="demo-timer">18:45</div>
-          </div>
-
-          <div class="sb-teams">
-            <div class="sb-team">
-              <div class="sb-team-name">Heim (UHC Tigers)</div>
-              <div class="sb-score" id="home-score">4</div>
+          <!-- Live Demo Info Caption -->
+          <div class="phone-demo-caption">
+            <div class="live-pulse-badge">
+              <span class="pulse-dot"></span>
+              <span>LIVE-DEMO (SMARTPHONE)</span>
             </div>
-            <div class="sb-vs">:</div>
-            <div class="sb-team">
-              <div class="sb-team-name">Gast (Floorball Stars)</div>
-              <div class="sb-score" id="guest-score">3</div>
-            </div>
-          </div>
-
-          <div class="sb-penalties">
-            <div class="penalty-box">
-              <span>#7 Tigers</span>
-              <span>01:14 (2')</span>
-            </div>
-            <div class="penalty-box">
-              <span>#23 Stars</span>
-              <span>01:48 (2'+2' 1/2)</span>
-            </div>
-          </div>
-
-          <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem; justify-content: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; flex-wrap: wrap;">
-            <button id="btn-toggle-timer" class="btn btn-primary btn-sm">Start / Pause</button>
-            <button id="btn-home-plus" class="btn btn-secondary btn-sm">+ Tor Heim</button>
-            <button id="btn-guest-plus" class="btn btn-secondary btn-sm">+ Tor Gast</button>
-            <button id="btn-reset-demo" class="btn btn-secondary btn-sm">Reset</button>
+            <a href="floorball-clock.html#live-demo" class="phone-demo-expand-link" title="Live-Demo im Breitbild-Modus öffnen">
+              <span>Breitbild-Modus</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
           </div>
         </div>
       </div>
