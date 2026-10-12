@@ -13,6 +13,7 @@
   --border-active: rgba(0, 210, 255, 0.4);
   --border-green: rgba(16, 185, 129, 0.4);
   --border-red: rgba(198, 1, 25, 0.45);
+  --border-orange: rgba(255, 122, 0, 0.45);
   
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
@@ -569,6 +570,10 @@ p {
   border-color: var(--border-red);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--shadow-glow-red);
 }
+.screenshot-gallery-item.orange-hover:hover {
+  border-color: var(--border-orange);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--shadow-glow-orange);
+}
 
 .screenshot-img-box {
   width: 100%;
@@ -1049,6 +1054,10 @@ p {
 .feature-card.red-hover:hover {
   border-color: var(--border-red);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), var(--shadow-glow-red);
+}
+.feature-card.orange-hover:hover {
+  border-color: var(--border-orange);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), var(--shadow-glow-orange);
 }
 
 .feature-icon {
