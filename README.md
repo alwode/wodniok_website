@@ -6,6 +6,7 @@ Moderne, responsive Entwickler-Website und App-Portfolio von **Alexander Wodniok
 
 - **[Floorball Clock](floorball-clock.html)**: Digitales Spielsekretariat & Hallenuhr nach den offiziellen Floorball-Spielregeln 2026 (SPRGK / IFF) mit Zehntelsekunden-Genauigkeit, aufsteigender Hallenanzeige (Regel 201.1), 2' / 2'+2' / 10' Strafen-Engine, Betreuer-Erfassung und offiziellem PDF-Spielberichtsbogen.
   - [Floorball Clock Handbuch](handbuch.html)
+  - [Marketing Hub & Status Creator](marketing/status-creator.html): Tool zur Generierung von 1080x1920 Status-Grafiken für WhatsApp/Social Media (inkl. Dankesseite für Tester).
 - **[Floorball Trainertool](trainertool.html)**: Die All-in-One Trainingsplanungs-App für Floorball-Trainer mit Übungsdatenbank nach Kategorien, Taktikskizzen, Trainingsablauf-Planung und PDF-Export mit E-Mail-Versand.
   - [Trainertool Handbuch](trainertool-handbuch.html)
 - **[CookVegan 🌱](cookvegan.html)**: Intelligente vegane Rezept-App mit 3-Stufen Cloud-Tresor (Privat 🔒, Geteilt 👥, Community 🌍), Web-Rezept-Importer (schema.org JSON-LD), dynamischer Portionenskalierung mit echten Bruchzahlen und Hands-Free Koch-Modus mit Timern.
