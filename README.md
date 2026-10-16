@@ -1,6 +1,6 @@
 # Alexander Wodniok – Official Website & App Portfolio
 
-Moderne, responsive Entwickler-Website und App-Portfolio von **Alexander Wodniok** ([wodniok.de](http://wodniok.de)).
+Moderne, responsive Entwickler-Website und App-Portfolio von **Alexander Wodniok** ([wodniok-service.de](https://wodniok-service.de)).
 
 ## 📱 Enthaltene App-Präsentationen & Handbücher
 

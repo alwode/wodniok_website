@@ -7,7 +7,7 @@ PORT=8000
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "--------------------------------------------------------"
-echo "🚀 Starte lokalen Webserver für wodniok.de..."
+echo "🚀 Starte lokalen Webserver für wodniok-service.de..."
 echo "📂 Verzeichnis: $DIR"
 echo "🌐 URL:         http://localhost:$PORT"
 echo "--------------------------------------------------------"
