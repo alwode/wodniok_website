@@ -3,5 +3,5 @@ Disallow: /desktop-portal.html
 Disallow: /download-portal.html
 Allow: /
 
-Sitemap: https://alwode.github.io/wodniok_website/sitemap.xml
+Sitemap: https://wodniok-service.de/sitemap.xml
 
