@@ -7,7 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initManualTOC();
   initPlatformTabs();
   initLightbox();
+  initPromotions();
 });
+
+/* Time-limited promotions: show elements only between data-promo-from and data-promo-until */
+function initPromotions() {
+  const now = new Date();
+  document.querySelectorAll('[data-promo-until]').forEach((el) => {
+    const from = el.dataset.promoFrom ? new Date(el.dataset.promoFrom) : null;
+    const until = new Date(el.dataset.promoUntil);
+    el.hidden = (from && now < from) || now >= until;
+  });
+}
 
 /* Mobile Menu Toggle */
 function initMobileMenu() {

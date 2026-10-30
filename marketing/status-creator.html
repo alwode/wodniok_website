@@ -506,6 +506,28 @@
           </div>
         </div>
 
+        <!-- Slide 6: Gratisaktion (31.10.–30.11.2026) -->
+        <div class="story-card">
+          <div class="story-card-header">
+            <span class="story-number">Aktion</span>
+            <span class="story-title">Gratis bis 30. November</span>
+          </div>
+          <div class="phone-preview-wrapper">
+            <canvas id="canvas-6" width="1080" height="1920" class="phone-preview-canvas"></canvas>
+          </div>
+          <div class="story-caption-box">
+            <strong>Begleittext für Status:</strong>
+            <span id="caption-6">🎁 Floorball Clock ist bis 30. November GRATIS im App Store (statt 1,99 €) – für iPhone, iPad &amp; Mac. Neu in 1.2.0: Regelwerk 2026, Kleinfeld-Zeiten, PDF-Spielbericht. Link in der Bio! 📲</span>
+          </div>
+          <div class="story-actions">
+            <button class="btn-download" onclick="downloadSlide(6)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              PNG (1080×1920)
+            </button>
+            <button class="btn-copy-caption" title="Text kopieren" onclick="copyText('caption-6')">📋</button>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1533,6 +1555,150 @@ Floorball ist echter Teamsport – Danke, dass ihr Teil dieses Teams seid! ❤�
       ctx.restore();
     }
 
+    // ==========================================
+    // RENDER SLIDE 6: Gratisaktion App Store (31.10.–30.11.2026)
+    // ==========================================
+    function renderSlide6(canvas) {
+      const ctx = canvas.getContext('2d');
+      drawBackground(ctx, "#fbbf24");
+
+      // Badge Top
+      ctx.save();
+      const badgeText = "🎁 EINFÜHRUNGSAKTION";
+      ctx.font = "800 28px sans-serif";
+      const bW = ctx.measureText(badgeText).width + 64;
+      const bH = 62;
+      const bX = (1080 - bW) / 2;
+      const bY = 130;
+      ctx.fillStyle = "rgba(251, 191, 36, 0.18)";
+      ctx.strokeStyle = "rgba(251, 191, 36, 0.6)";
+      ctx.lineWidth = 3;
+      roundRect(ctx, bX, bY, bW, bH, 31);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = "#fbbf24";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(badgeText, 540, bY + bH / 2);
+      ctx.restore();
+
+      // App Icon
+      const iconSize = 200;
+      const iconX = (1080 - iconSize) / 2;
+      const iconY = 245;
+      if (assets.icon.complete && assets.icon.naturalWidth > 0) {
+        ctx.save();
+        roundRect(ctx, iconX, iconY, iconSize, iconSize, 44);
+        ctx.clip();
+        ctx.drawImage(assets.icon, iconX, iconY, iconSize, iconSize);
+        ctx.restore();
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
+        ctx.lineWidth = 5;
+        roundRect(ctx, iconX, iconY, iconSize, iconSize, 44);
+        ctx.stroke();
+      }
+
+      // Title
+      ctx.save();
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "900 72px sans-serif";
+      ctx.fillText("Floorball Clock", 540, 535);
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "600 30px sans-serif";
+      ctx.fillText("Digitales Spielsekretariat für Floorball", 540, 590);
+      ctx.restore();
+
+      // Price Highlight
+      ctx.save();
+      ctx.textAlign = "center";
+      const priceGrad = ctx.createLinearGradient(240, 0, 840, 0);
+      priceGrad.addColorStop(0, "#fde68a");
+      priceGrad.addColorStop(1, "#f59e0b");
+      ctx.fillStyle = priceGrad;
+      ctx.font = "900 190px sans-serif";
+      ctx.fillText("GRATIS", 540, 820);
+
+      // "statt 1,99 €" with only the old price struck through
+      ctx.fillStyle = "#cbd5e1";
+      ctx.font = "700 44px sans-serif";
+      const prefix = "statt ";
+      const oldPrice = "1,99 €";
+      const preW = ctx.measureText(prefix).width;
+      const opW = ctx.measureText(oldPrice).width;
+      const startX = 540 - (preW + opW) / 2;
+      ctx.textAlign = "left";
+      ctx.fillText(prefix, startX, 900);
+      ctx.fillText(oldPrice, startX + preW, 900);
+      ctx.strokeStyle = "#f87171";
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.moveTo(startX + preW - 4, 886);
+      ctx.lineTo(startX + preW + opW + 4, 886);
+      ctx.stroke();
+      ctx.textAlign = "center";
+
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "800 46px sans-serif";
+      ctx.fillText("nur bis 30. November 2026", 540, 985);
+      ctx.fillStyle = "#38bdf8";
+      ctx.font = "700 34px sans-serif";
+      ctx.fillText("🍏 im App Store für iPhone, iPad & Mac", 540, 1045);
+      ctx.restore();
+
+      // What's new box
+      const boxY = 1110;
+      ctx.save();
+      ctx.fillStyle = "rgba(17, 24, 39, 0.85)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.12)";
+      ctx.lineWidth = 2;
+      roundRect(ctx, 90, boxY, 900, 430, 32);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.textAlign = "left";
+      ctx.fillStyle = "#fbbf24";
+      ctx.font = "800 34px sans-serif";
+      ctx.fillText("Neu in Version 1.2.0", 150, boxY + 75);
+
+      ctx.fillStyle = "#f8fafc";
+      ctx.font = "600 31px sans-serif";
+      [
+        "✅ Regelwerk SPRGK 2026 & SPO 2026.1",
+        "✅ Pausen & Verlängerung nach Feldart",
+        "✅ Strafzeiten exakt – auch im Hintergrund",
+        "✅ Technisches Tor & Kadergrenze",
+        "✅ Offizieller PDF-Spielbericht",
+      ].forEach((line, i) => ctx.fillText(line, 150, boxY + 145 + i * 58));
+      ctx.restore();
+
+      // App Store button
+      ctx.save();
+      ctx.fillStyle = "#000000";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.4)";
+      ctx.lineWidth = 3;
+      roundRect(ctx, 270, 1590, 540, 105, 22);
+      ctx.fill();
+      ctx.stroke();
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "800 36px sans-serif";
+      ctx.fillText("Laden im App Store", 540, 1642);
+      ctx.restore();
+
+      // Footer
+      ctx.save();
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "500 26px sans-serif";
+      ctx.fillText("wodniok-service.de/floorball-clock.html", 540, 1775);
+      ctx.fillStyle = "#f8fafc";
+      ctx.font = "700 32px sans-serif";
+      ctx.fillText("Jetzt sichern & Spieltag entspannt angehen! 🏑", 540, 1840);
+      ctx.restore();
+    }
+
     // Render all canvases
     function renderAll() {
       const c1 = document.getElementById('canvas-1');
@@ -1546,6 +1712,8 @@ Floorball ist echter Teamsport – Danke, dass ihr Teil dieses Teams seid! ❤�
       if (c3) renderSlide3(c3);
       if (c4) renderSlide4(c4);
       if (c5) renderSlide5(c5);
+      const c6 = document.getElementById('canvas-6');
+      if (c6) renderSlide6(c6);
     }
 
     // Wait for images to load

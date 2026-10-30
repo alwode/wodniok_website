@@ -198,6 +198,28 @@ p {
   border-color: rgba(198, 1, 25, 0.35);
 }
 
+/* Time-limited promotion (shown between data-promo-from and data-promo-until, see js/main.js) */
+.badge-promo {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.45);
+}
+
+.promo-note {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-md, 12px);
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: var(--text-primary, #f8fafc);
+  font-size: 0.95rem;
+}
+
+.badge-promo[hidden],
+.promo-note[hidden] {
+  display: none;
+}
+
 /* Header & Navigation */
 .site-header {
   position: sticky;
