@@ -175,8 +175,8 @@
               Floorball Clock steuert Pausen automatisch im Spielzyklus (<em>Game Loop</em>):
             </p>
             <ul style="padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-              <li><strong>Reguläre Drittel-/Halbzeitpausen:</strong> Nach Ablauf eines Abschnitts startet automatisch der Pausentimer (Standard: <code>10:00</code> Minuten). Auf dem Scoreboard wird <em>PAUSE / INTERMISSION</em> mit Countdown visualisiert.</li>
-              <li><strong>Pause vor der Overtime:</strong> Endet die reguläre Spielzeit unentschieden (und ist die Overtime aktiviert), folgt eine 2-minütige Vorbereitungspause vor Beginn der Verlängerung.</li>
+              <li><strong>Reguläre Drittel-/Halbzeitpausen:</strong> Nach Ablauf eines Abschnitts startet automatisch der Pausentimer (Regelwert: <code>10:00</code> Minuten auf Großfeld, <code>5:00</code> Minuten auf Kleinfeld/Mixed; im Spiel-Setup unter <em>Pausen-Dauer</em> anpassbar, z. B. für Turniere). Auf dem Scoreboard wird <em>PAUSE / INTERMISSION</em> mit Countdown visualisiert.</li>
+              <li><strong>Pause vor der Overtime:</strong> Endet die reguläre Spielzeit unentschieden (und ist die Overtime aktiviert), folgt eine 2-minütige Vorbereitungspause vor Beginn der Verlängerung. Die Verlängerung (Golden Goal) dauert nach Regelwert 10 Minuten auf Großfeld und 5 Minuten auf Kleinfeld/Mixed und ist unter <em>Dauer der Verlängerung</em> einstellbar.</li>
               <li><strong>Reguläres Spielende:</strong> Gibt es einen regulären Sieger, wird keine Verlängerung gestartet – das Spiel wechselt direkt in den Status <em>SPIEL ENDE / GAME FINISHED</em>.</li>
             </ul>
           </div>
@@ -195,6 +195,7 @@
               <div class="step-details">
                 <h4>Toreingabe mit Spielzeit-Auswahl, Torschütze & Assist</h4>
                 <p>Ein Klick auf das <strong>+ Symbol</strong> öffnet den Tordialog. Hier können Sie die exakte <strong>Spielzeit</strong> des Tores einstellen sowie den <strong>Torschützen</strong> und <strong>Vorlagengeber (Assist)</strong> anhand der Spielernummern aus dem Roster auswählen.</p>
+                <p>Über die Tor-Art wählen Sie <strong>Tor</strong>, <strong>Eigentor (ET)</strong>, <strong>Strafschusstreffer</strong> oder <strong>Technisches Tor (TT)</strong>. Strafschusstreffer und technische Tore beenden keine laufende Strafe. Fällt ein Tor, während eine aufgeschobene Strafe angezeigt wird, aktivieren Sie <em>„Tor während angezeigter aufgeschobener Strafe“</em>: Die angezeigte Strafe wird trotzdem verhängt, laufende Strafen des Gegners erlöschen nicht (Regel 603.6).</p>
               </div>
             </div>
 
@@ -202,13 +203,13 @@
               <div class="step-number" style="font-size: 1.4rem; font-weight: 900;">−</div>
               <div class="step-details">
                 <h4>Tor-Korrektur mit Bestätigungsdialog</h4>
-                <p>Wird ein Tor vom Schiedsrichtergespann aberkannt, reduziert das <strong>- Symbol</strong> den Spielstand mit einer klaren Bestätigung (<em>„Tor löschen“</em>) und entfernt das letzte Tor sauber aus dem Spielbericht. Tore können zudem jederzeit im Spielberichtsbogen editiert oder gelöscht werden.</p>
+                <p>Wird ein Tor vom Schiedsrichtergespann aberkannt, reduziert das <strong>- Symbol</strong> den Spielstand mit einer klaren Bestätigung (<em>„Tor löschen“</em>) und entfernt das letzte Tor sauber aus dem Spielbericht. Tore können zudem jederzeit im Spielberichtsbogen editiert oder gelöscht werden. Hat das gelöschte Tor eine Strafe beendet, lebt diese mit der korrekten Restzeit wieder auf.</p>
               </div>
             </div>
 
             <div class="callout callout-tip">
               <h5>👥 Dynamische Feldspieler-Anzeige</h5>
-              <p>Unterhalb des Spielstands wird in Echtzeit angezeigt, wie viele Feldspieler das jeweilige Team aktuell auf dem Feld hat (z. B. <code>5/5 SPIELER</code> auf Großfeld oder <code>3/3 SPIELER</code> auf Kleinfeld abzüglich aktiver Bankstrafen).</p>
+              <p>Unterhalb des Spielstands wird in Echtzeit angezeigt, wie viele Spieler inklusive Torhüter das jeweilige Team aktuell auf dem Feld hat (z. B. <code>6/6 SPIELER</code> bzw. <code>5/6 SPIELER</code> auf Großfeld oder <code>4/4 SPIELER</code> auf Kleinfeld, abzüglich aktiver Bankstrafen; zeitgleiche Strafen beider Teams nach Regel 603.9 werden nicht abgezogen).</p>
             </div>
           </div>
         </article>
@@ -224,8 +225,8 @@
             <div class="step-block">
               <div class="step-number">🥅</div>
               <div class="step-details">
-                <h4>5 reguläre Schützen pro Team</h4>
-                <p>Jedes Team nominiert 5 Schützen aus dem aktuellen Spielkader. Die App führt das Schiedsgericht abwechselnd durch die Versuche von Heim- und Gastteam.</p>
+                <h4>5 (Großfeld) bzw. 3 (Kleinfeld/Mixed) reguläre Schützen pro Team</h4>
+                <p>Jedes Team nominiert 5 Schützen auf Großfeld bzw. 3 Schützen auf Kleinfeld und Mixed aus dem aktuellen Spielkader. Die App führt das Schiedsgericht abwechselnd durch die Versuche von Heim- und Gastteam.</p>
               </div>
             </div>
 
@@ -300,7 +301,15 @@
               <div class="step-number text-badge">MS</div>
               <div class="step-details">
                 <h4>Matchstrafe (Match Penalty)</h4>
-                <p>Führt zu einer 2'+2' Großen Bankstrafe für das Team sowie zum sofortigen Ausschluss des Spielers (Eintragung im offiziellen Spielbericht).</p>
+                <p>Führt zu einer 2'+2' Großen Bankstrafe für das Team sowie zum sofortigen Ausschluss des Spielers (Eintragung im offiziellen Spielbericht). Die Bankstrafe wird zusätzlich erfasst; eine laufende 10'-Strafe desselben Spielers endet.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number text-badge">TMS</div>
+              <div class="step-details">
+                <h4>Technische Matchstrafe (Regel 612)</h4>
+                <p>Ausschluss ohne Sperre, z. B. bei nicht spielberechtigten Spielern oder Betreuern. Wird wie die Matchstrafe im Spielbericht eingetragen; eine laufende 10'-Strafe derselben Person endet.</p>
               </div>
             </div>
 
@@ -344,8 +353,12 @@
                   <td style="padding: 0.75rem;">Maximal 2 Bankstrafen (Großfeld) bzw. 1 Bankstrafe (Kleinfeld) können pro Team gleichzeitig ticken. Weitere Strafen werden verzögert in die Warteschlange gestellt und rücken automatisch nach.</td>
                 </tr>
                 <tr style="border-bottom: 1px solid var(--border-subtle);">
-                  <td style="padding: 0.75rem;"><strong>Konfliktlösung (Regel 603.2)</strong></td>
-                  <td style="padding: 0.75rem;">Enden zwei Strafen exakt zeitgleich, unterstützt die App das Schiedsgericht durch einen geführten Entscheidungsdialog, welcher Spieler das Feld zuerst betritt.</td>
+                  <td style="padding: 0.75rem;"><strong>Gegentor in Unterzahl (Regel 603.6)</strong></td>
+                  <td style="padding: 0.75rem;">Erzielt das Team in Überzahl ein Tor, bietet die App an, die Bankstrafe des Gegners mit der kürzesten Restzeit zu beenden. Bei einer 2'+2' endet nur der laufende Teil. Strafschusstreffer, technische Tore und Tore während einer angezeigten aufgeschobenen Strafe beenden keine Strafe.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                  <td style="padding: 0.75rem;"><strong>Zeitgleiche Strafen (Regel 603.9)</strong></td>
+                  <td style="padding: 0.75rem;">Bankstrafen beider Teams aus derselben Unterbrechung werden automatisch paarweise verrechnet: Sie verändern die Spielerzahl nicht und werden nicht durch Tore beendet.</td>
                 </tr>
                 <tr>
                   <td style="padding: 0.75rem;"><strong>✏️ Live-Korrektur</strong></td>
@@ -482,10 +495,10 @@
           <h2>13. Häufige Fragen & Praxistipps</h2>
           <div class="manual-card">
             <h4>Wie verhält sich die App beim Penaltyschießen?</h4>
-            <p>Die App führt das Schiedsgericht durch die 5 regulären Schützen pro Team. Fällt keine Entscheidung, startet automatisch das Sudden-Death-Verfahren. Alle Treffer werden synchron auf der Hallenanzeige und im Spielbericht eingetragen.</p>
+            <p>Die App führt das Schiedsgericht durch die regulären Schützen pro Team (5 auf Großfeld, 3 auf Kleinfeld/Mixed). Fällt keine Entscheidung, startet automatisch das Sudden-Death-Verfahren. Alle Treffer werden synchron auf der Hallenanzeige und im Spielbericht eingetragen.</p>
 
-            <h4 style="margin-top: 1.5rem;">Wie verhält sich die App, wenn zwei Strafen exakt zeitgleich enden?</h4>
-            <p>Gemäß IFF Regel 603.2 öffnet die App einen Schiedsgerichts-Dialog (<em>Entscheidung erforderlich: Welcher Spieler kehrt zurück?</em>), um dem Zeitnehmer die manuelle Entscheidung zu überlassen.</p>
+            <h4 style="margin-top: 1.5rem;">Wie verhält sich die App bei zeitgleichen Strafen beider Teams?</h4>
+            <p>Bankstrafen beider Teams aus derselben Spielunterbrechung werden gemäß Regel 603.9 automatisch paarweise verrechnet. Sie reduzieren die Spielerzahl nicht und werden nicht durch Tore beendet – ein Entscheidungsdialog ist nicht nötig.</p>
 
             <h4 style="margin-top: 1.5rem;">Können Strafzeiten während des Spiels korrigiert werden?</h4>
             <p><strong>Ja!</strong> Tippen Sie einfach auf das Stift-Symbol ✏️ neben der Strafe auf dem Bedienfeld, um Spielernummer oder Restzeit anzupassen.</p>
