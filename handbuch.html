@@ -71,9 +71,10 @@
           <li><a href="#timeout">8. Auszeiten / Timeouts (30s)</a></li>
           <li><a href="#roster">9. Kader, Betreuer & Vorlagen</a></li>
           <li><a href="#display">10. Hallenanzeige (Scoreboard)</a></li>
-          <li><a href="#spielbericht">11. Offizieller PDF-Spielbericht</a></li>
-          <li><a href="#autosave">12. Auto-Save & Crash-Schutz</a></li>
-          <li><a href="#faq">13. FAQ & Schiedsgericht-Tipps</a></li>
+          <li><a href="#stream-overlay">11. Stream-Overlay (OBS & vMix)</a></li>
+          <li><a href="#spielbericht">12. Offizieller PDF-Spielbericht</a></li>
+          <li><a href="#autosave">13. Auto-Save & Crash-Schutz</a></li>
+          <li><a href="#faq">14. FAQ & Schiedsgericht-Tipps</a></li>
         </ul>
       </aside>
 
@@ -425,6 +426,14 @@
                 <p>Passen Sie die Team-Namen an und laden Sie individuelle Vereinswappen hoch. Diese werden auf dem externen Scoreboard für Zuschauer präsentiert.</p>
               </div>
             </div>
+
+            <div class="step-block">
+              <div class="step-number">🎨</div>
+              <div class="step-details">
+                <h4>Teamfarbe & Kürzel</h4>
+                <p>Unter dem Team-Namen wählen Sie die <strong>Teamfarbe</strong>: aus einer Palette, per Hex-Code oder mit einem Tipp auf einen der ✨-Vorschläge, die die App aus dem Vereinslogo berechnet. Daneben steht das <strong>Kürzel</strong> (bis zu 5 Zeichen, z.&nbsp;B. <code>RDL</code>); leer gelassen verwendet die App die ersten drei Buchstaben des Namens. Farbe und Kürzel werden mit der Team-Vorlage gespeichert und im Stream-Overlay verwendet. Haben beide Teams sehr ähnliche Farben, weist die App darauf hin.</p>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -459,9 +468,61 @@
           </div>
         </article>
 
-        <!-- 11. Spielbericht & PDF-Export -->
+        <!-- 11. Stream-Overlay -->
+        <article class="manual-section" id="stream-overlay">
+          <h2>11. Stream-Overlay für OBS, vMix & Co.</h2>
+          <div class="manual-card">
+            <p>
+              Für Livestreams liefert Floorball Clock ein Spielstand-Banner als Webseite, die Streaming-Software wie <strong>OBS Studio</strong>, <strong>vMix</strong> oder <strong>Streamlabs</strong> als <em>Browserquelle</em> einbindet. Das Banner zeigt Teams, Logos, Spielstand, Spielzeit, Drittel und laufende Strafen und aktualisiert sich live. Eine Internetverbindung ist nicht nötig.
+            </p>
+
+            <div class="step-block">
+              <div class="step-number">1</div>
+              <div class="step-details">
+                <h4>Overlay-Server einschalten</h4>
+                <p>Das Fernseher-Symbol in der App-Leiste öffnet den Bildschirm <strong>Stream-Overlay</strong>. Nach <strong>Overlay-Server aktivieren</strong> startet der Server bei jedem App-Start automatisch. Auf dem Mac und unter Windows wählen Sie, ob nur dieser Rechner oder das ganze Netzwerk zugreifen darf; auf iPhone, iPad und Android ist das Banner immer im Netzwerk erreichbar.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">2</div>
+              <div class="step-details">
+                <h4>Browserquelle in OBS anlegen</h4>
+                <p>Die angezeigte Adresse kopieren (z.&nbsp;B. <code>http://192.168.178.20:8765/overlay</code>) und in OBS über <em>Quelle hinzufügen → Browser</em> mit Breite 1920 und Höhe 1080 einfügen. Der Hintergrund ist transparent. Der Streaming-Rechner muss im selben Netzwerk sein.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">3</div>
+              <div class="step-details">
+                <h4>Weitere Layouts</h4>
+                <p>Über die Auswahl <strong>Banner / Tor / Pause / Kader</strong> zeigt die App die passende Adresse. Jedes Layout wird als eigene Browserquelle angelegt:</p>
+                <ul>
+                  <li><strong>Tor:</strong> Einblendung für einige Sekunden nach jedem Tor, mit Torschütze und Vorlage aus dem Spielprotokoll.</li>
+                  <li><strong>Pause:</strong> Tafel in den Pausen und nach Spielende mit Spielstand, Toren pro Drittel und Pausen-Countdown.</li>
+                  <li><strong>Kader:</strong> Kaderliste mit Torhütern, Feldspielern und Betreuern – fest für Heim oder Gast oder beide im Wechsel.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-number">4</div>
+              <div class="step-details">
+                <h4>Darstellung anpassen</h4>
+                <p>Im Abschnitt <strong>Darstellung</strong> stellen Sie Design (dunkel/hell), Position (oben/unten), Größe, Anzeige der Teamnamen (automatisch, voll oder Kürzel), Logos, Strafen und die Farbe der Drittelanzeige ein. Änderungen erscheinen sofort im Stream, ohne OBS anzufassen. Lange Teamnamen werden automatisch kleiner gesetzt, notfalls zeigt das Banner das Kürzel.</p>
+              </div>
+            </div>
+
+            <div class="callout callout-tip">
+              <h5>💡 Praxistipps</h5>
+              <p>Auf iPhone, iPad und Android muss Floorball Clock im Vordergrund bleiben, sonst bleibt das Banner stehen, bis Sie zurückkehren. Unter Windows legt der Installer eine Firewall-Regel für private Netzwerke an; kommt OBS nicht durch, das Netzwerk in Windows auf „Privat“ stellen. In Hallen-WLANs sind Geräte oft voneinander abgeschirmt – dann hilft ein eigener Router oder der Hotspot des Handys.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Spielbericht & PDF-Export -->
         <article class="manual-section" id="spielbericht">
-          <h2>11. Offizieller Floorball Deutschland Spielbericht (PDF)</h2>
+          <h2>12. Offizieller Floorball Deutschland Spielbericht (PDF)</h2>
           <div class="manual-card">
             <p>
               Über das Protokoll-Symbol in der Titelleiste öffnen Sie den <strong>Match Report Screen</strong>:
@@ -478,7 +539,7 @@
 
         <!-- 12. Auto-Save -->
         <article class="manual-section" id="autosave">
-          <h2>12. Zustandsspeicherung & Auto-Save (Crash-Sicherheit)</h2>
+          <h2>13. Zustandsspeicherung & Auto-Save (Crash-Sicherheit)</h2>
           <div class="manual-card">
             <p>
               Höchste Ausfallsicherheit am Zeitnehmertisch:
@@ -492,7 +553,7 @@
 
         <!-- 13. FAQ -->
         <article class="manual-section" id="faq">
-          <h2>13. Häufige Fragen & Praxistipps</h2>
+          <h2>14. Häufige Fragen & Praxistipps</h2>
           <div class="manual-card">
             <h4>Wie verhält sich die App beim Penaltyschießen?</h4>
             <p>Die App führt das Schiedsgericht durch die regulären Schützen pro Team (5 auf Großfeld, 3 auf Kleinfeld/Mixed). Fällt keine Entscheidung, startet automatisch das Sudden-Death-Verfahren. Alle Treffer werden synchron auf der Hallenanzeige und im Spielbericht eingetragen.</p>
