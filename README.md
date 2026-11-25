@@ -11,6 +11,7 @@ Moderne, responsive Entwickler-Website und App-Portfolio von **Alexander Wodniok
   - [Trainertool Handbuch](trainertool-handbuch.html)
 - **[CookVegan 🌱](cookvegan.html)**: Intelligente vegane Rezept-App mit 3-Stufen Cloud-Tresor (Privat 🔒, Geteilt 👥, Community 🌍), Web-Rezept-Importer (schema.org JSON-LD), dynamischer Portionenskalierung mit echten Bruchzahlen und Hands-Free Koch-Modus mit Timern.
   - [CookVegan Handbuch](cookvegan-handbuch.html)
+- **[Hit History 🎵](hit-history.html)**: Musik-Timeline-Partyspiel für iPhone, iPad, Mac und Android: Song hören, Originaljahr schätzen, Timeline bauen. 210 kuratierte Hits als 30-Sekunden-Hörproben oder mit Apple Music, drei Spielmodi und spoilerfreier TV-Modus.
 - **[App-Portfolio Übersicht](apps.html)**: Komplette Übersicht aller mobilen Anwendungen.
 
 ## 🚀 Lokales Entwickeln & Vorschau

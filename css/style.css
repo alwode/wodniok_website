@@ -14,7 +14,8 @@
   --border-green: rgba(16, 185, 129, 0.4);
   --border-red: rgba(198, 1, 25, 0.45);
   --border-orange: rgba(255, 122, 0, 0.45);
-  
+  --border-magenta: rgba(255, 46, 136, 0.45);
+
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
@@ -28,11 +29,15 @@
   --accent-emerald: #10b981;
   --accent-sage: #34d399;
   --accent-amber: #f59e0b;
-  
+  --accent-magenta: #ff2e88;
+  --accent-electric: #00e5ff;
+  --accent-gold: #ffd600;
+
   --gradient-brand: linear-gradient(135deg, #00d2ff 0%, #3b82f6 50%, #8b5cf6 100%);
   --gradient-accent: linear-gradient(135deg, #ff7a00 0%, #ff4b4b 100%);
   --gradient-vegan: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
   --gradient-trainer: linear-gradient(135deg, #c60119 0%, #e11d48 50%, #9f1239 100%);
+  --gradient-hits: linear-gradient(135deg, #ff2e88 0%, #b14dff 55%, #00e5ff 100%);
   --gradient-card: linear-gradient(180deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.7) 100%);
   
   /* Layout & Spacing */
@@ -48,6 +53,7 @@
   --shadow-glow-orange: 0 0 25px rgba(255, 122, 0, 0.25);
   --shadow-glow-green: 0 0 25px rgba(16, 185, 129, 0.25);
   --shadow-glow-red: 0 0 25px rgba(198, 1, 25, 0.35);
+  --shadow-glow-magenta: 0 0 25px rgba(255, 46, 136, 0.3);
   
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -1507,7 +1513,7 @@ p {
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1080px) {
   .nav-links {
     display: none;
     position: absolute;
@@ -1709,4 +1715,99 @@ p {
   color: var(--text-secondary);
   line-height: 1.4;
   margin: 0;
+}
+
+/* ==========================================================================
+   Hit History – Magenta/Cyan Theme (App-Farben #FF2E88, #00E5FF, #FFD600)
+   ========================================================================== */
+.text-gradient-hits {
+  background: var(--gradient-hits);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.badge-magenta {
+  background: rgba(255, 46, 136, 0.1);
+  color: var(--accent-magenta);
+  border-color: rgba(255, 46, 136, 0.3);
+}
+
+.badge-electric {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--accent-electric);
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.badge-gold {
+  background: rgba(255, 214, 0, 0.1);
+  color: var(--accent-gold);
+  border-color: rgba(255, 214, 0, 0.3);
+}
+
+.feature-icon.magenta {
+  background: rgba(255, 46, 136, 0.1);
+  color: var(--accent-magenta);
+  border-color: rgba(255, 46, 136, 0.2);
+}
+
+.feature-card.magenta-hover:hover {
+  border-color: var(--border-magenta);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), var(--shadow-glow-magenta);
+}
+
+.screenshot-gallery-item.magenta-hover:hover {
+  border-color: var(--border-magenta);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--shadow-glow-magenta);
+}
+
+.btn-magenta {
+  background: linear-gradient(135deg, #ff2e88 0%, #d6247a 100%);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: var(--shadow-glow-magenta);
+}
+
+.btn-magenta:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 46, 136, 0.5);
+}
+
+.store-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--radius-md);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Navigation mit 9 Einträgen: Logo nicht umbrechen, CTA-Button bei schmaleren Desktops ausblenden */
+.site-logo span {
+  white-space: nowrap;
+}
+
+@media (min-width: 1081px) {
+  .nav-actions .btn {
+    display: none;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 1081px) {
+  .nav-links {
+    gap: 0.55rem;
+  }
+  .nav-links a {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-actions .btn {
+    display: none;
+  }
 }
